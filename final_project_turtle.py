@@ -11,9 +11,6 @@ class Song():
         
 
 
-
-
-
 def main(): 
     """ Finds a song based on the users personality 
     
