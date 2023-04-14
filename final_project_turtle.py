@@ -23,6 +23,18 @@ def playlist (track, artist):
             play[track]= artist
             i+=1
 
+class PersonalityTest():
+    def __init__(self, traits):
+        self.traits = traits
+        
+    def user_score(self):
+        """Prompt user to rate themselves on each trait"""
+        pass
+    
+    def personality_type(self, score):
+        """Take the users score and return personality type"""
+        pass  
+
 def main(): 
     """ Finds a song based on the users personality 
     
