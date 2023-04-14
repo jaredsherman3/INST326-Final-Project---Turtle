@@ -40,6 +40,66 @@ class PersonalityTest():
             return "reserved"
         else:
             return "guarded"
+        
+        #OPTION 2 FOR PERSONALITY TEST BASED ON THE BIG FIVE
+class BigFiveTest:
+    """ This test is formatted a bit diff from above. I think it is a bit easier to work
+    with but we can discuss details. Personally am a big fan of the big five test. Anyway
+    I think it would be good to ask them questions that doesn't expect them to already
+    know how well they match with a certain trait by using scenarios - Jess
+    
+    CLass representing a personality test
+    Attributes:
+        questions (str): questions for the persoanlity test
+        trait_scores (int): tracks score for each trait based on response
+    """
+    def __init__(self):
+        self.questions = [
+            "I am someone who is talkative.",  # Extraversion
+            "I am someone who tends to find fault with others.",  # Agreeableness (reverse-scored)
+            "I am someone who does a thorough job.",  # Conscientiousness
+            "I am someone who gets nervous easily.",  # Neuroticism
+            "I am someone who has an active imagination.",  # Openness
+            "I am someone who is outgoing, sociable.",  # Extraversion
+            "I am someone who tends to be disorganized.",  # Conscientiousness (reverse-scored)
+            "I am someone who is relaxed, handles stress well.",  # Neuroticism (reverse-scored)
+            "I am someone who has few artistic interests.",  # Openness (reverse-scored)
+            "I am someone who is empathetic, feels for others."  # Agreeableness
+            #Maybe will add more questions
+        ]
+        
+        self.trait_scores = {
+            "Extraversion": 0,
+            "Agreeableness": 0,
+            "Conscientiousness": 0,
+            "Neuroticism": 0,
+            "Openness": 0
+        }
+        
+        def ask_question(self, question):
+            valid_answers = frozenset(["1", "2", "3", "4", "5"])
+            while True:
+                answer = input(question + " (1=Disagree strongly, 2=Disagree a little, 3=Neutral, 4=Agree a little, 5=Agree strongly) ")
+                if answer in valid_answers:
+                    return int(answer)
+                print("Invalid answer. Please enter a number between 1 and 5.")
+                
+        def take_test(self):
+            """ figuring out a way to calc the scores"""
+            for question in self.questions:
+                answer = self.ask_question(question)
+                if question in frozenset([self.questions[0], self.questions[5]]):
+                    self.trait_scores["Extraversion"] += answer
+                elif question in frozenset([self.questions[1], self.questions[9]]):
+                    self.trait_scores["Agreeableness"] += 6 - answer
+                elif question in frozenset([self.questions[2], self.questions[6]]):
+                    self.trait_scores["Conscientiousness"] += 6 - answer
+                elif question in frozenset([self.questions[3], self.questions[7]]):
+                    self.trait_scores["Neuroticism"] += 6 - answer
+                elif question in frozenset([self.questions[4], self.questions[8]]):
+                    self.trait_scores["Openness"] += 6 - answer
+    
+        
 
 class Song():
     def __init__(self, title):
@@ -66,7 +126,8 @@ def playlist (track, artist):
 
 
 def main(): 
-    """ Finds a song based on the users personality 
+    """ Finds a song based on the users personality. Returns a graph analysis of their 
+        personality based on the results. 
     
     
     """
