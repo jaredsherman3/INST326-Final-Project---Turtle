@@ -110,19 +110,17 @@ class Song():
         """
         self.title = title
         
-def playlist (track, artist):
+    def playlist (songfile):
         """Creates a dictionary of different songs
             Args:
-                track (str): song written by an artist
-                artist(str): the artist who wrote the song
+                songfile (str): JSON file that holds multiple dictionaries 
+                with songs that represent different time periods/genres and are
+                meant to correspond to the traits in BigFiveTest
             Returns:
-                play (dict): a dictionary of songs with the song as the key 
-                and the artist as the value"""
-        i = 0
-        play = {}
-        while i < 16:
-            play[track]= artist
-            i+=1
+                play (dict): a dictionary of songs with the artist as the key 
+                and the song as the value"""
+        
+        
 
 
 def main(): 
