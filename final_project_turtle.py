@@ -99,7 +99,12 @@ class BigFiveTest:
                 elif question in frozenset([self.questions[4], self.questions[8]]):
                     self.trait_scores["Openness"] += 6 - answer
     
-        
+
+def highest_score(dict):
+    '''Returns key with the highest value. 
+    Could be used to find the highest trait score to return suggested songs? -  Chiamaka'''
+    return max(dict, key=dict.get)
+
 
 class Song():
     def __init__(self, title):
