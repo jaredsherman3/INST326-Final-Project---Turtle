@@ -110,15 +110,30 @@ class Song():
         """
         self.title = title
         
-    def playlist (songfile):
+    def playlist (self,songdict):
         """Creates a dictionary of different songs
             Args:
-                songfile (str): JSON file that holds multiple dictionaries 
+                songdict (dict): derived from JSON file that holds multiple dictionaries 
                 with songs that represent different time periods/genres and are
-                meant to correspond to the traits in BigFiveTest
+                meant to correspond to the traits in BigFiveTest 
+                -- can edit this to fit other persoanlity test if necessary
+                 and I'm still working on the JSON file -> Chiamaka
             Returns:
                 play (dict): a dictionary of songs with the artist as the key 
                 and the song as the value"""
+        # Will take the max value of the the highest trait and return a dictionary 
+        # (maybe a list?) of songs for the user 
+        self.play = {}
+        User = BigFiveTest()
+        max_score = max(max(User.trait_scores.values()))
+        for track in songdict.keys():
+            for key in User.trait_scores.keys():
+                if max_score == songdict[track]:
+                   
+                        
+
+
+
         
         
 
