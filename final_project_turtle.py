@@ -138,19 +138,18 @@ class Song():
                         
 
 
-
-        
-        
-
-
-def main(traitscore,traitscore2):
+def main(user):
     """ Sets up someone to go through the personallity test
     Args:
-        traitscore(str): The trait with the highest score
-        traitscore2(str):The trait with the second highest score
+        user: an instance of the BigFive Test Class for a new user
         
                         
-    Returns:
-        Song(item in dict): This is the song with the artist based of personality 
-                            scores """ 
+    Side Effects:
+        Prints the song instance 
+        S: an instance of the song class with the song choice based on the user instance
+     
+     """ 
    
+    a=BigFiveTest(user)
+    s=Song(a)
+    print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
