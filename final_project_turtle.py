@@ -143,9 +143,14 @@ class Song():
         
 
 
-def main(): 
-    """ Finds a song based on the users personality. Returns a graph analysis of their 
-        personality based on the results. 
-    
-    
-    """
+def main(traitscore,traitscore2):
+    """ Sets up someone to go through the personallity test
+    Args:
+        traitscore(str): The trait with the highest score
+        traitscore2(str):The trait with the second highest score
+        
+                        
+    Returns:
+        Song(item in dict): This is the song with the artist based of personality 
+                            scores """ 
+   
