@@ -110,7 +110,7 @@ class BigFiveTest:
                         print("You are neurotic....")
                 elif trait == "Openness":
                     if score < 4:
-                        print("You may be more traditional and prefer the familiar.")
+                        print("You are not very open to experience....")
                     elif score >= 4 and score < 7:
                         print("You are somewhat open to experience....")
                     else:
