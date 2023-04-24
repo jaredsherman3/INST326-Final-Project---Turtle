@@ -76,8 +76,46 @@ class BigFiveTest:
             plt.show()
             
         def score_analysis():
-            """"""
-            pass
+            """Analyzes the user's trait and scores with explanations - Jared"""
+            for trait, score in self.trait_scores.items():
+                print(f"Trait: {trait}")
+                print(f"Score: {score}")
+                if trait == "Extraversion":
+                    if score < 4:
+                        print("You are introverted....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat extraverted....")
+                    else:
+                        print("You are extraverted....")
+                elif trait == "Agreeableness":
+                    if score < 4:
+                        print("You are disagreeable....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat agreeable....")
+                    else:
+                        print("You are agreeable....")
+                elif trait == "Conscientiousness":
+                    if score < 4:
+                        print("You are not very conscientious....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat conscientious....")
+                    else:
+                        print("You are conscientious....")
+                elif trait == "Neuroticism":
+                    if score < 4:
+                        print("You are not very neurotic....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat neurotic....")
+                    else:
+                        print("You are neurotic....")
+                elif trait == "Openness":
+                    if score < 4:
+                        print("You may be more traditional and prefer the familiar.")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat open to experience....")
+                    else:
+                        print("You are open to experience....")
+                print("\n")
         
 
 def highest_score(dict):
