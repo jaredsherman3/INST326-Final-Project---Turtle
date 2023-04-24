@@ -100,7 +100,7 @@ class Song():
 def main(user):
     """ Sets up someone to go through the personallity test
     Args:
-        user: an instance of the BigFive Test Class for a new user
+        user: a person who will go throguh the test 
         
                         
     Side Effects:
@@ -108,7 +108,8 @@ def main(user):
         S: an instance of the song class with the song choice based on the user instance
      
      """ 
-   
+    user = input("What is your name?")
     a=BigFiveTest(user)
+    a=highest_score(a)
     s=Song(a)
-    print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
+    print(F"{user}, your persontality trait was {a}, The song we recomend for you is {s}!")
