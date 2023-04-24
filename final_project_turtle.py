@@ -1,4 +1,5 @@
 """ Song suggestions for a user based on personality """
+import matplotlib.pyplot as plt
 
 
 class BigFiveTest:
@@ -57,7 +58,27 @@ class BigFiveTest:
                     self.trait_scores["Neuroticism"] += 6 - answer
                 elif question in frozenset([self.questions[4], self.questions[8]]):
                     self.trait_scores["Openness"] += 6 - answer
-    
+
+
+                    
+        def visualization():
+            """Data visualization method to show a bar chart with the users 
+            trait on the x-axis and the users score on the y-axis - Jared"""
+            trait_names = list(self.trait_scores.keys())
+            trait_scores = list(self.trait_scores.values())
+
+            plt.bar(trait_names, trait_scores)
+
+            plt.title('Big Five Personality Traits')
+            plt.xlabel('Traits')
+            plt.ylabel('Scores')
+            
+            plt.show()
+            
+        def score_analysis():
+            """"""
+            pass
+        
 
 def highest_score(dict):
     '''Returns key with the highest value. 
