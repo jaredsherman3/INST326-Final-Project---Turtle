@@ -82,39 +82,54 @@ class BigFiveTest:
                 print(f"Score: {score}")
                 if trait == "Extraversion":
                     if score < 4:
-                        print("You are introverted....")
+                        print("You are introverted. You may prefer quieter \
+                              settings and need alone time to recharge.")
                     elif score >= 4 and score < 7:
-                        print("You are somewhat extraverted....")
+                        print("You are somewhat extraverted. You enjoy \
+                              socializing, but also need some alone time.")
                     else:
-                        print("You are extraverted....")
+                        print("You enjoy socializing and may feel energized \
+                              by being around others.")
                 elif trait == "Agreeableness":
                     if score < 4:
-                        print("You are disagreeable....")
+                        print("You are not agreeable. You may be competitive \
+                              and even manipulative.")
                     elif score >= 4 and score < 7:
-                        print("You are somewhat agreeable....")
+                        print("You are somewhat agreeable. Some of the time \
+                              you are selfless and some selfish.")
                     else:
-                        print("You are agreeable....")
+                        print("You are agreeable and have a great deal of \
+                              interest in other people.")
                 elif trait == "Conscientiousness":
                     if score < 4:
-                        print("You are not very conscientious....")
+                        print("You are not very conscientious. You may \
+                              procrastinate important tasks and be unorganized.")
                     elif score >= 4 and score < 7:
-                        print("You are somewhat conscientious....")
+                        print("You are somewhat conscientious. You may be \
+                              organized in some aspects of life and not in others.")
                     else:
-                        print("You are conscientious....")
+                        print("You are conscientious. You pay attention to detail \
+                              and are very organized with a set schedule.")
                 elif trait == "Neuroticism":
                     if score < 4:
-                        print("You are not very neurotic....")
+                        print("You are not very neurotic. You tend to be relaxed \
+                              and deal well with stress.")
                     elif score >= 4 and score < 7:
-                        print("You are somewhat neurotic....")
+                        print("You are somewhat neurotic. You can handle your \
+                              emotions well most of the time")
                     else:
-                        print("You are neurotic....")
+                        print("You are neurotic and tend to worry about many \
+                              things as well as get upset easily.")
                 elif trait == "Openness":
                     if score < 4:
-                        print("You are not very open to experience....")
+                        print("You are not very open to experience and tend \
+                              to dislike change or new ideas.")
                     elif score >= 4 and score < 7:
-                        print("You are somewhat open to experience....")
+                        print("You are somewhat open to experience. You try \
+                              new things some of the time.")
                     else:
-                        print("You are open to experience....")
+                        print("You are open to experience. You are very open to \
+                              new things and very adventurous.")
                 print("\n")
         
 
@@ -152,9 +167,6 @@ class Song():
         for track in songdict.keys():
             for key in User.trait_scores.keys():
                 if max_score == songdict[track]:
-                   
-                        
-
 
 def main(user):
     """ Sets up someone to go through the personallity test
