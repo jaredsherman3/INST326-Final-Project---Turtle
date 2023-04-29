@@ -1,0 +1,137 @@
+{
+"Extraversion":{
+
+"Low": ["Human Nature by Michael Jackson", 
+"Stayin Alive by Bee Gees", 
+"Don't Stop Believin' by Journey"
+],
+
+
+"Medium" :["Help! by The Beatles",
+"Flowers by Miley Cyrus",
+]
+
+,
+
+"High":["Yeah! by Usher", 
+"My Type by Saweetie", 
+"Pon de Replay by Rihanna", 
+"The Real Slim Shady by Eminem", 
+"Fancy by Iggy Azalea"
+
+
+
+]
+
+
+
+
+
+},
+
+
+"Agreeableness":{
+
+"Low":[
+
+
+
+]
+    
+   
+,
+
+"Medium": [
+
+
+
+],
+
+"High":[
+
+
+
+
+]
+
+
+},
+
+"Conscientiousness" : {
+
+"Low":[
+
+
+],
+
+
+"Medium":[
+
+
+
+],
+
+
+"High":[
+
+
+
+
+]
+
+
+
+},
+
+"Neuroticism": {
+
+"Low":[
+
+
+
+],
+
+"Medium": [
+
+
+
+
+],
+
+
+"High": [
+
+
+
+]
+
+},
+
+"Openness": {
+
+"Low":[
+
+
+
+],
+
+"Medium": [
+
+
+
+],
+
+
+"High": [
+
+
+
+
+]
+
+
+
+}
+
+
+}
