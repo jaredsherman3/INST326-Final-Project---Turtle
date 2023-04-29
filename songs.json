@@ -1,26 +1,45 @@
 {
 "Extraversion":{
 
-"Low": ["Human Nature by Michael Jackson", 
-"Stayin Alive by Bee Gees", 
-"Don't Stop Believin' by Journey"
+"Low": 
+[" 'Human Nature' by Michael Jackson", 
+" 'Stayin Alive' by Bee Gees", 
+" 'Don't' Stop Believin' by Journey",
+" 'Help!' by The Beatles",
+" 'When the party's over' by Billie Eilish",
+" 'Until I Found You' by Stephen Sanchez",
+" 'She Will be Loved' by Maroon 5 ",
+" 'Issues' by Julia Michaels",
+" 'July' by Noah Cyrus",
+" 'Lucky' by Jason Mraz ft. Colbie Cailet "
 ],
 
 
-"Medium" :["Help! by The Beatles",
-"Flowers by Miley Cyrus",
+"Medium" :
+[" 'Shape of You' by Ed SHeeran",
+" 'Flowers' by Miley Cyrus",
+" 'Titanium' by David Guetta ft. Sia",
+" 'Wake Me Up' by Avicii",
+" 'Good Time' by One Republic",
+" 'Prisoner' by Miley Cyrus ft. Dua Lipa",
+" 'Thats What I Like' by Bruno Mars",
+" 'Dynamite' by Taio Cruz",
+" 'Glad You Came' by The Wanted"
 ]
 
 ,
 
-"High":["Yeah! by Usher", 
-"My Type by Saweetie", 
+"High":
+["Yeah! by Usher", 
+"Don't Start Now by Dua Lipa", 
 "Pon de Replay by Rihanna", 
-"The Real Slim Shady by Eminem", 
-"Fancy by Iggy Azalea"
-
-
-
+"I Gotta Feeling by Black Eyed Peas", 
+"Fancy by Iggy Azalea",
+"Sucker by Jonas Brothers",
+"Happy by Pharrell WIlliams",
+"Levitating by Dua Lipa",
+"Say SO by Doja Cat",
+"last Friday Night by Katy Perry"
 ]
 
 
