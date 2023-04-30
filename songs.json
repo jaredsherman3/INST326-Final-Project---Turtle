@@ -11,7 +11,7 @@
 " 'She Will be Loved' by Maroon 5 ",
 " 'Issues' by Julia Michaels",
 " 'July' by Noah Cyrus",
-" 'Lucky' by Jason Mraz ft. Colbie Cailet "
+" 'Lucky' by Jason Mraz ft. Colbie Cailet"
 ],
 
 
@@ -25,25 +25,20 @@
 " 'Thats What I Like' by Bruno Mars",
 " 'Dynamite' by Taio Cruz",
 " 'Glad You Came' by The Wanted"
-]
-
-,
+],
 
 "High":
-["Yeah! by Usher", 
-"Don't Start Now by Dua Lipa", 
-"Pon de Replay by Rihanna", 
-"I Gotta Feeling by Black Eyed Peas", 
-"Fancy by Iggy Azalea",
-"Sucker by Jonas Brothers",
-"Happy by Pharrell WIlliams",
-"Levitating by Dua Lipa",
-"Say SO by Doja Cat",
-"last Friday Night by Katy Perry"
+[" 'Yeah!' by Usher", 
+" 'Don't Start Now' by Dua Lipa", 
+" 'Pon de Replay' by Rihanna", 
+" 'I Gotta Feeling' by Black Eyed Peas", 
+" 'Fancy' by Iggy Azalea",
+" 'Sucker' by Jonas Brothers",
+" 'Happy' by Pharrell WIlliams",
+" 'Levitating' by Dua Lipa",
+" 'Say So' by Doja Cat",
+" 'Last Friday Night' by Katy Perry"
 ]
-
-
-
 
 
 },
@@ -51,26 +46,46 @@
 
 "Agreeableness":{
 
-"Low":[
-
-
-
+"Low":
+[" 'Jealous' by Nick Jonas",
+" 'We Need A Resolution' by Aaliyah", 
+" 'Problem With You' by Sabrina Claudio",
+" 'Sorry' by Beyonce ",
+" 'Nights Like This' by Kehlani",
+" 'The Boy is Mine' by Brandy & Monica",
+" 'Heartbreaker' by Justin Bieber",
+" 'Rude' by Magic!",
+" 'Bad Blood' by Taylor Swift"
 ]
     
    
 ,
 
-"Medium": [
-
-
+"Medium": 
+[" 'New Flame' by Chris Brown",
+" 'Ring The Alarm' by Beyonce",
+" 'Beautiful Liar' by Beyonce & Shakira",
+" 'Before He Cheats' by Carrie Underwood",
+" 'You Oughta Know' by Alania Morrisette",
+" 'Leavin' by Jesse McCartney",
+" 'Treat You Better' by Shawn Mendes",
+" 'Four Five Seconds' by Rihanna",
+" 'Girl' by Destiny's Child",
+" 'Mean' by Taylor Swift"
 
 ],
 
-"High":[
-
-
-
-
+"High":
+[" 'You're Still The One' by Shania Twain",
+" 'Toothbrush' by DNCE",
+" 'Thinking Out Loud' by Ed Sheeran",
+" 'My Girl' by Temptations",
+" 'I'll Be There' by Chris Brown",
+" 'Anyone' by Justin Bieber",
+" 'At Last' by Etta James",
+" 'How Deep is Your Love' by Bee Gees", 
+" 'I'm Yours' by Jason Mraz",
+" 'Kiss From a Rose' by Seal"
 ]
 
 
@@ -78,7 +93,8 @@
 
 "Conscientiousness" : {
 
-"Low":[
+"Low":
+[" 'Irresponsible' by Haley Cole",
 
 
 ],
@@ -91,7 +107,12 @@
 ],
 
 
-"High":[
+"High":
+[" 'Responsibility' by Dolly Parton",
+" 'Man In The Mirror' by Micheal Jackson",
+" 'Umbrella' by Rihanna",
+" 'Hey Brother' by Avicii",
+
 
 
 
@@ -104,7 +125,8 @@
 
 "Neuroticism": {
 
-"Low":[
+"Low":
+[
 
 
 
@@ -128,21 +150,25 @@
 
 "Openness": {
 
-"Low":[
+"Low":
+[
 
 
 
 ],
 
-"Medium": [
+"Medium": 
+[" 'Strangers' by Jonas Brothers",
 
 
 
 ],
 
 
-"High": [
-
+"High": 
+[" 'Bless The Broken Road' by Rascal Flatts'",
+" 'I'll Be' by Edwin Mccain",
+" 'Kissing Strangers' by DNCE",
 
 
 
