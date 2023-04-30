@@ -97,10 +97,12 @@
 [" 'Irresponsible' by Haley Cole",
 
 
+
 ],
 
 
-"Medium":[
+"Medium":
+[""
 
 
 
@@ -112,10 +114,9 @@
 " 'Man In The Mirror' by Micheal Jackson",
 " 'Umbrella' by Rihanna",
 " 'Hey Brother' by Avicii",
-
-
-
-
+" 'Back to December' by Taylor Swift",
+" 'Recovery' by Justin Bieber",
+" 'Keep Your Head Up' by Andy Grammar"
 
 ]
 
@@ -132,7 +133,8 @@
 
 ],
 
-"Medium": [
+"Medium": 
+[ " 'ETA' by Justin Bieber",
 
 
 
@@ -140,7 +142,14 @@
 ],
 
 
-"High": [
+"High": 
+[" 'Flatline' by Justin Bieber",
+" 'Ain't it Fun' by Paramore",
+" 'In My Blood' by Shawn Mendes",
+" 'Easy' by Camila Cabello",
+" 'Brave' by Sara Bareilles",
+" 'Only Love' by Katy Perry",
+
 
 
 
@@ -151,15 +160,20 @@
 "Openness": {
 
 "Low":
-[
-
-
-
+[ " 'Here' by Alessia Cara",
+" 'Not a Bad Thing' by Justin Timberlake",
+" 'Toxic' by Britney Spears",
+" 'Bye Bye Bye' by N'Sync",
+" 'Love Yourself' by Justin Bieber",
+" 'Like Real People Do' by Hozier",
+" 'Say My Name' by Destiny's Child",
 ],
 
 "Medium": 
 [" 'Strangers' by Jonas Brothers",
-
+" 'Jackie & Wilson' by Hozier",
+" 'POV' by Ariana Grande",
+" "
 
 
 ],
@@ -169,7 +183,13 @@
 [" 'Bless The Broken Road' by Rascal Flatts'",
 " 'I'll Be' by Edwin Mccain",
 " 'Kissing Strangers' by DNCE",
-
+" 'New Flame' by Chris Brown",
+" 'I Tried' by Brandy",
+" 'Someone New' by Hozier",
+" 'Galway Girl' by Ed Sheeran", 
+" 'I Don't Wanna Be' by Gavin Degraw",
+" 'The Tide Is High' by Atomic Kitten",
+" 'Rumors' by Sabrina Claudio ft. Zayn"
 
 
 ]
