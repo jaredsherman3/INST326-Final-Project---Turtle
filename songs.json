@@ -95,17 +95,22 @@
 
 "Low":
 [" 'Irresponsible' by Haley Cole",
-
-
+" 'Teenage Dream' by Katy Perry",
+" 'Locked Out of Union' by Bruno Mars",
+" 'Starships' by Nicki Minaj",
+" 'Where Have You Been' by Rihanna",
+" 'Payphone' by Maroon 5 "
 
 ],
 
 
 "Medium":
-[""
-
-
-
+[" 'Africa' by Toto",
+" 'ABC' by Jackson 5",
+" 'Paper Planes' by MIA",
+" 'Blame' by Calvin Harris",
+" 'Team' by Lorde", 
+" 'We Are The Champions' by Queen"
 ],
 
 
@@ -127,18 +132,21 @@
 "Neuroticism": {
 
 "Low":
-[
-
-
+[" 'Living Proof' by Camilla Cabello",
+" '10,000 Hours' by Dan & Shay",
+" 'God Must've Spent a Little More Time On You' by N'Sync",
+" 'I Want It That Way' by Backstreet Boys",
+" 'Halo' by Beyonce",
+" 'Someone Like You' by Adele"
 
 ],
 
 "Medium": 
 [ " 'ETA' by Justin Bieber",
-
-
-
-
+" 'Good Days' by SZA",
+" 'Exhale' by Sabrina Carpenter",
+" 'Bad Guy' by Billie Eilish",
+" 'Solitude is Bliss' by Tame Impala"
 ],
 
 
@@ -149,10 +157,8 @@
 " 'Easy' by Camila Cabello",
 " 'Brave' by Sara Bareilles",
 " 'Only Love' by Katy Perry",
-
-
-
-
+" 'Disturbia' by Rihanna",
+" 'Everything I Wanted' by Billie Eilish"
 ]
 
 },
@@ -166,15 +172,16 @@
 " 'Bye Bye Bye' by N'Sync",
 " 'Love Yourself' by Justin Bieber",
 " 'Like Real People Do' by Hozier",
-" 'Say My Name' by Destiny's Child",
+" 'Creep' By Radiohead"
 ],
 
 "Medium": 
 [" 'Strangers' by Jonas Brothers",
 " 'Jackie & Wilson' by Hozier",
 " 'POV' by Ariana Grande",
-" "
-
+" 'Me Myself and I' by Beyonce",
+" 'Alone Together' by Fall Out Boy",
+" 'Say My Name' by Destiny's Child"
 
 ],
 
@@ -190,8 +197,6 @@
 " 'I Don't Wanna Be' by Gavin Degraw",
 " 'The Tide Is High' by Atomic Kitten",
 " 'Rumors' by Sabrina Claudio ft. Zayn"
-
-
 ]
 
 
