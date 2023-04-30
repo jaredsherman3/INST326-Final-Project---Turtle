@@ -1,5 +1,6 @@
 """ Song suggestions for a user based on personality """
 import matplotlib.pyplot as plt
+import random
 
 
 class BigFiveTest:
@@ -157,12 +158,24 @@ class Song():
                 and the song as the value"""
         # Will take the max value of the the highest trait and return a dictionary 
         # (maybe a list?) of songs for the user 
-        self.play = {}
+        self.play = []
         User = BigFiveTest()
-        max_score = max(max(User.trait_scores.values()))
-        for track in songdict.keys():
-            for key in User.trait_scores.keys():
-                if max_score == songdict[track]:
+        for key, value in User.trait_scores.items():
+            if key[value] == 2 or 3 or 4:
+                if key in songdict.keys():
+                    for i in range (2):
+                        self.play.append(random.choice(songdict[key]['Low']))
+
+            if key[value] == 5 or 6 or 7:
+                -
+
+    def high_trait_song():
+        ''' should give the User a specific song reccomendation'''
+        highest = highest_score(User.trait_scores)
+        for key in songdict.keys():
+            if highest == key:
+                -
+
                     
 def main(user):
     """ Sets up someone to go through the personallity test
