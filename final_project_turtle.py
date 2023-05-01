@@ -208,3 +208,9 @@ def main(user):
     a=BigFiveTest(user)
     s=Song(a)
     print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
+    
+
+
+if __name__ == "__main__":
+    user = input('What is your name')
+    main(user)
