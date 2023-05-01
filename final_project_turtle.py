@@ -1,5 +1,6 @@
 """ Song suggestions for a user based on personality """
 import matplotlib.pyplot as plt
+import random
 
 
 class BigFiveTest:
@@ -36,93 +37,104 @@ class BigFiveTest:
             "Openness": 0
         }
         
-        def ask_question(self, question):
-            valid_answers = frozenset(["1", "2", "3", "4", "5"])
-            while True:
-                answer = input(question + " (1=Disagree strongly, 2=Disagree a little, 3=Neutral, 4=Agree a little, 5=Agree strongly) ")
-                if answer in valid_answers:
-                    return int(answer)
-                print("Invalid answer. Please enter a number between 1 and 5.")
+    def ask_question(self, question):
+        valid_answers = frozenset(["1", "2", "3", "4", "5"])
+        while True:
+            answer = input(question + " (1=Disagree strongly, 2=Disagree a little, 3=Neutral, 4=Agree a little, 5=Agree strongly) ")
+            if answer in valid_answers:
+                return int(answer)
+            print("Invalid answer. Please enter a number between 1 and 5.")
+            
+    def take_test(self):
+        """ figuring out a way to calc the scores"""
+        for question in self.questions:
+            answer = self.ask_question(question)
+            if question in frozenset([self.questions[0], self.questions[5]]):
+                self.trait_scores["Extraversion"] += answer
+            elif question in frozenset([self.questions[1], self.questions[9]]):
+                self.trait_scores["Agreeableness"] += 6 - answer
+            elif question in frozenset([self.questions[2], self.questions[6]]):
+                self.trait_scores["Conscientiousness"] += 6 - answer
+            elif question in frozenset([self.questions[3], self.questions[7]]):
+                self.trait_scores["Neuroticism"] += 6 - answer
+            elif question in frozenset([self.questions[4], self.questions[8]]):
+                self.trait_scores["Openness"] += 6 - answer
                 
-        def take_test(self):
-            """ figuring out a way to calc the scores"""
-            for question in self.questions:
-                answer = self.ask_question(question)
-                if question in frozenset([self.questions[0], self.questions[5]]):
-                    self.trait_scores["Extraversion"] += answer
-                elif question in frozenset([self.questions[1], self.questions[9]]):
-                    self.trait_scores["Agreeableness"] += 6 - answer
-                elif question in frozenset([self.questions[2], self.questions[6]]):
-                    self.trait_scores["Conscientiousness"] += 6 - answer
-                elif question in frozenset([self.questions[3], self.questions[7]]):
-                    self.trait_scores["Neuroticism"] += 6 - answer
-                elif question in frozenset([self.questions[4], self.questions[8]]):
-                    self.trait_scores["Openness"] += 6 - answer
+    def visualization(self):
+        """Data visualization method to show a bar chart with the users 
+        trait on the x-axis and the users score on the y-axis - Jared"""
+        trait_names = list(self.trait_scores.keys())
+        trait_scores = list(self.trait_scores.values())
 
+        plt.bar(trait_names, trait_scores)
 
-                    
-        def visualization():
-            """Data visualization method to show a bar chart with the users 
-            trait on the x-axis and the users score on the y-axis - Jared"""
-            trait_names = list(self.trait_scores.keys())
-            trait_scores = list(self.trait_scores.values())
-
-            plt.bar(trait_names, trait_scores)
-
-            plt.title('Big Five Personality Traits')
-            plt.xlabel('Traits')
-            plt.ylabel('Scores')
-            
-            plt.show()
-            
-        def score_analysis():
-            """Analyzes the user's trait and scores with explanations - Jared"""
-            for trait, score in self.trait_scores.items():
-                print(f"Trait: {trait}")
-                print(f"Score: {score}")
-                if trait == "Extraversion":
-                    if score < 4:
-                        print("You are introverted....")
-                    elif score >= 4 and score < 7:
-                        print("You are somewhat extraverted....")
-                    else:
-                        print("You are extraverted....")
-                elif trait == "Agreeableness":
-                    if score < 4:
-                        print("You are disagreeable....")
-                    elif score >= 4 and score < 7:
-                        print("You are somewhat agreeable....")
-                    else:
-                        print("You are agreeable....")
-                elif trait == "Conscientiousness":
-                    if score < 4:
-                        print("You are not very conscientious....")
-                    elif score >= 4 and score < 7:
-                        print("You are somewhat conscientious....")
-                    else:
-                        print("You are conscientious....")
-                elif trait == "Neuroticism":
-                    if score < 4:
-                        print("You are not very neurotic....")
-                    elif score >= 4 and score < 7:
-                        print("You are somewhat neurotic....")
-                    else:
-                        print("You are neurotic....")
-                elif trait == "Openness":
-                    if score < 4:
-                        print("You are not very open to experience....")
-                    elif score >= 4 and score < 7:
-                        print("You are somewhat open to experience....")
-                    else:
-                        print("You are open to experience....")
-                print("\n")
+        plt.title('Big Five Personality Traits')
+        plt.xlabel('Traits')
+        plt.ylabel('Scores')
         
+        plt.show()
+        
+    def score_analysis(self):
+        """Analyzes the user's trait and scores with explanations - Jared"""
+        for trait, score in self.trait_scores.items():
+            print(f"Trait: {trait}")
+            print(f"Score: {score}")
+            if trait == "Extraversion":
+                if score < 4:
+                    print("You are introverted. You may prefer quieter \
+                            settings and need alone time to recharge.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat extraverted. You enjoy \
+                            socializing, but also need some alone time.")
+                else:
+                    print("You enjoy socializing and may feel energized \
+                            by being around others.")
+            elif trait == "Agreeableness":
+                if score < 4:
+                    print("You are not agreeable. You may be competitive \
+                            and even manipulative.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat agreeable. Some of the time \
+                            you are selfless and some selfish.")
+                else:
+                    print("You are agreeable and have a great deal of \
+                            interest in other people.")
+            elif trait == "Conscientiousness":
+                if score < 4:
+                    print("You are not very conscientious. You may \
+                            procrastinate important tasks and be unorganized.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat conscientious. You may be \
+                            organized in some aspects of life and not in others.")
+                else:
+                    print("You are conscientious. You pay attention to detail \
+                            and are very organized with a set schedule.")
+            elif trait == "Neuroticism":
+                if score < 4:
+                    print("You are not very neurotic. You tend to be relaxed \
+                            and deal well with stress.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat neurotic. You can handle your \
+                            emotions well most of the time")
+                else:
+                    print("You are neurotic and tend to worry about many \
+                            things as well as get upset easily.")
+            elif trait == "Openness":
+                if score < 4:
+                    print("You are not very open to experience and tend \
+                            to dislike change or new ideas.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat open to experience. You try \
+                            new things some of the time.")
+                else:
+                    print("You are open to experience. You are very open to \
+                            new things and very adventurous.")
+            print("\n")
 
 def highest_score(dict):
     '''Returns key with the highest value. 
     Could be used to find the highest trait score to return suggested songs? -  Chiamaka'''
     return max(dict, key=dict.get)
-
 
 class Song():
     def __init__(self, title):
@@ -132,30 +144,55 @@ class Song():
             title (str): title of a song
         """
         self.title = title
+
+    def high_trait_song(self,songdict):
+        ''' should give the User a specific song reccomendation best on highest trait
+        
+        Args: 
+        songdict (dict): derived from a JSON file that holds 5 dictioanries
+        with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
+        different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka 
+        
+        Returns:
+        Reccomended song to user based on highest trait'''
+        highest = highest_score(self.trait_scores)
+        for key in songdict.keys():
+            if highest == key:
+                self.title = random.choice(songdict[key]['High'])
+
+        return f'A song that best describes you is: {self.title}' 
+    #Line above can be removed---> function can be used in main function
         
     def playlist (self,songdict):
         """Creates a dictionary of different songs
             Args:
-                songdict (dict): derived from JSON file that holds multiple dictionaries 
-                with songs that represent different time periods/genres and are
-                meant to correspond to the traits in BigFiveTest 
-                -- can edit this to fit other persoanlity test if necessary
-                 and I'm still working on the JSON file -> Chiamaka
+                songdict (dict): derived from a JSON file that holds 5 dictioanries
+                with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
+                different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka
             Returns:
-                play (dict): a dictionary of songs with the artist as the key 
-                and the song as the value"""
-        # Will take the max value of the the highest trait and return a dictionary 
-        # (maybe a list?) of songs for the user 
-        self.play = {}
+                play (list): A list of songs with the name and artist in the format ['song' by Artist Name]"""
+        # Will take the max value of the the highest trait and return a list of songs for the user 
+        self.play = []
         User = BigFiveTest()
-        max_score = max(max(User.trait_scores.values()))
-        for track in songdict.keys():
-            for key in User.trait_scores.keys():
-                if max_score == songdict[track]:
-                   
-                        
+        for trait, score in User.trait_scores.items():
+            if  2  >= score  <= 4:
+                if trait in songdict.keys():
+                    for i in range (3):
+                        self.play.append(random.choice(songdict[trait]['Low']))
+
+            elif  5 >= score  <= 7:
+                if trait in songdict.keys():
+                    for i in range (3):
+                        self.play.append(random.choice(songdict[trait]['Medium']))
+
+            elif  8  >= score  <= 10:
+                if trait in songdict.keys():
+                    for i in range (3):
+                        self.play.append(random.choice(songdict[trait]['High']))
+            return self.play
 
 
+                    
 def main(user):
     """ Sets up someone to go through the personallity test
     Args:
