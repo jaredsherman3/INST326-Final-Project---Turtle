@@ -46,7 +46,7 @@ class BigFiveTest:
             print("Invalid answer. Please enter a number between 1 and 5.")
             
     def take_test(self):
-        """ figuring out a way to calc the scores"""
+        """Figuring out a way to calc the scores"""
         for question in self.questions:
             answer = self.ask_question(question)
             if question in frozenset([self.questions[0], self.questions[5]]):
@@ -62,7 +62,7 @@ class BigFiveTest:
                 
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
-        trait on the x-axis and the users score on the y-axis - Jared"""
+        trait on the x-axis and the users score on the y-axis"""
         trait_names = list(self.trait_scores.keys())
         trait_scores = list(self.trait_scores.values())
 
@@ -75,7 +75,7 @@ class BigFiveTest:
         plt.show()
         
     def score_analysis(self):
-        """Analyzes the user's trait and scores with explanations - Jared"""
+        """Analyzes the user's trait and scores with explanations"""
         for trait, score in self.trait_scores.items():
             print(f"Trait: {trait}")
             print(f"Score: {score}")
@@ -132,13 +132,13 @@ class BigFiveTest:
             print("\n")
 
 def highest_score(dict):
-    '''Returns key with the highest value. 
-    Could be used to find the highest trait score to return suggested songs? -  Chiamaka'''
+    """Returns key with the highest value. 
+    Could be used to find the highest trait score to return suggested songs? -  Chiamaka"""
     return max(dict, key=dict.get)
 
 class Song():
     def __init__(self, title):
-        """ Initalizes a new instance of Song class 
+        """Initalizes a new instance of Song class 
         
         Args: 
             title (str): title of a song
@@ -190,7 +190,9 @@ class Song():
                     for i in range (3):
                         self.play.append(random.choice(songdict[trait]['High']))
             return self.play
-
+        
+    def __repr__(self):
+        return f'A song that best describes you is: {self.title}'
 
                     
 def main(user):
