@@ -1,4 +1,5 @@
 """ Song suggestions for a user based on personality """
+import matplotlib.pyplot as plt
 
 
 class BigFiveTest:
@@ -57,7 +58,65 @@ class BigFiveTest:
                     self.trait_scores["Neuroticism"] += 6 - answer
                 elif question in frozenset([self.questions[4], self.questions[8]]):
                     self.trait_scores["Openness"] += 6 - answer
-    
+
+
+                    
+        def visualization():
+            """Data visualization method to show a bar chart with the users 
+            trait on the x-axis and the users score on the y-axis - Jared"""
+            trait_names = list(self.trait_scores.keys())
+            trait_scores = list(self.trait_scores.values())
+
+            plt.bar(trait_names, trait_scores)
+
+            plt.title('Big Five Personality Traits')
+            plt.xlabel('Traits')
+            plt.ylabel('Scores')
+            
+            plt.show()
+            
+        def score_analysis():
+            """Analyzes the user's trait and scores with explanations - Jared"""
+            for trait, score in self.trait_scores.items():
+                print(f"Trait: {trait}")
+                print(f"Score: {score}")
+                if trait == "Extraversion":
+                    if score < 4:
+                        print("You are introverted....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat extraverted....")
+                    else:
+                        print("You are extraverted....")
+                elif trait == "Agreeableness":
+                    if score < 4:
+                        print("You are disagreeable....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat agreeable....")
+                    else:
+                        print("You are agreeable....")
+                elif trait == "Conscientiousness":
+                    if score < 4:
+                        print("You are not very conscientious....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat conscientious....")
+                    else:
+                        print("You are conscientious....")
+                elif trait == "Neuroticism":
+                    if score < 4:
+                        print("You are not very neurotic....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat neurotic....")
+                    else:
+                        print("You are neurotic....")
+                elif trait == "Openness":
+                    if score < 4:
+                        print("You are not very open to experience....")
+                    elif score >= 4 and score < 7:
+                        print("You are somewhat open to experience....")
+                    else:
+                        print("You are open to experience....")
+                print("\n")
+        
 
 def highest_score(dict):
     '''Returns key with the highest value. 
