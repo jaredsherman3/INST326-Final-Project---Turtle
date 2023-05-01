@@ -60,7 +60,7 @@ class BigFiveTest:
             elif question in frozenset([self.questions[4], self.questions[8]]):
                 self.trait_scores["Openness"] += 6 - answer
                 
-    def visualization():
+    def visualization(self):
         """Data visualization method to show a bar chart with the users 
         trait on the x-axis and the users score on the y-axis - Jared"""
         trait_names = list(self.trait_scores.keys())
@@ -74,7 +74,7 @@ class BigFiveTest:
         
         plt.show()
         
-    def score_analysis():
+    def score_analysis(self):
         """Analyzes the user's trait and scores with explanations - Jared"""
         for trait, score in self.trait_scores.items():
             print(f"Trait: {trait}")
