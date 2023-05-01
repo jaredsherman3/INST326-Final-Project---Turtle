@@ -192,6 +192,11 @@ class Song():
             return self.play
         
     def __repr__(self):
+        """Prints a song recommendation in a readable format
+        
+        Returns:
+            str: A string that contains the recommended song to the user
+        """
         return f'A song that best describes you is: {self.title}'
 
                     
