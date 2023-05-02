@@ -1,7 +1,8 @@
 """ Song suggestions for a user based on personality """
 import matplotlib.pyplot as plt
 import random
-
+from argparse import ArgumentParser
+import sys
 
 class BigFiveTest:
     """ This test is formatted a bit diff from above. I think it is a bit easier to work
@@ -217,6 +218,28 @@ def main(user):
     s=Song(highest_trait)
     print(F"{user}, your persontality trait was {highest_trait}, The song we recomend for you is {s}!")
     
+def parse_args(arglist):
+    """ Parse command-line arguments.
+    
+    Expect one mandatory arguments:
+        - user: Name of the person taking the test 
+    
+    Args:
+        arglist (list of str): arguments from the command line.
+    
+    Returns:
+        namespace: the parsed arguments, as a namespace.
+    """
+    parser = ArgumentParser()
+    parser.add_argument('user',type=str, help="The name of the User taking the test")
+    return parser.parse_args(arglist)
+
+# Need to figure out which one to use with the parse args
+
+if __name__== "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.user)
+
 
 
 if __name__ == "__main__":
