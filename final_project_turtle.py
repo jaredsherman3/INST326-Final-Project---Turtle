@@ -163,7 +163,7 @@ class Song():
         return f'A song that best describes you is: {self.title}' 
     #Line above can be removed---> function can be used in main function
         
-    def playlist (self,songdict):
+    def playlist (self,songdict,num_songs=3):
         """Creates a dictionary of different songs
             Args:
                 songdict (dict): derived from a JSON file that holds 5 dictioanries
@@ -177,19 +177,19 @@ class Song():
         for trait, score in User.trait_scores.items():
             if  2  >= score  <= 4:
                 if trait in songdict.keys():
-                    for i in range (3):
+                    for i in range (num_songs):
                         self.play.append(random.choice(songdict[trait]['Low']))
 
             elif  5 >= score  <= 7:
                 if trait in songdict.keys():
-                    for i in range (3):
+                    for i in range (num_songs):
                         self.play.append(random.choice(songdict[trait]['Medium']))
 
             elif  8  >= score  <= 10:
                 if trait in songdict.keys():
-                    for i in range (3):
+                    for i in range (num_songs):
                         self.play.append(random.choice(songdict[trait]['High']))
-            return self.play
+        return self.play
         
     def __repr__(self):
         """Prints a song recommendation in a readable format
