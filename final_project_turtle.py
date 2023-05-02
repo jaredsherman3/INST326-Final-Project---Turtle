@@ -212,10 +212,10 @@ def main(user):
      
      """ 
     user = input("What is your name?")
-    a=BigFiveTest(user)
-    a=highest_score(a)
-    s=Song(a)
-    print(F"{user}, your persontality trait was {a}, The song we recomend for you is {s}!")
+    traits=BigFiveTest(user)
+    highest_trait=highest_score(traits)
+    s=Song(highest_trait)
+    print(F"{user}, your persontality trait was {highest_trait}, The song we recomend for you is {s}!")
     
 
 
