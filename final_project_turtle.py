@@ -12,52 +12,40 @@ class BigFiveTest:
         questions (str): questions for the persoanlity test
         trait_scores (int): tracks score for each trait based on response
     """
-    def __init__(self):
-        self.questions = [
-            "I am someone who is talkative.",  # Extraversion
-            "I am someone who tends to find fault with others.",  # Agreeableness (reverse-scored)
-            "I am someone who does a thorough job.",  # Conscientiousness
-            "I am someone who gets nervous easily.",  # Neuroticism
-            "I am someone who has an active imagination.",  # Openness
-            "I am someone who is outgoing, sociable.",  # Extraversion
-            "I am someone who tends to be disorganized.",  # Conscientiousness (reverse-scored)
-            "I am someone who is relaxed, handles stress well.",  # Neuroticism (reverse-scored)
-            "I am someone who has few artistic interests.",  # Openness (reverse-scored)
-            "I am someone who is empathetic, feels for others."  # Agreeableness
-            #Maybe will add more questions
-        ]
-        
-        self.trait_scores = {
-            "Extraversion": 0,
-            "Agreeableness": 0,
-            "Conscientiousness": 0,
-            "Neuroticism": 0,
-            "Openness": 0
-        }
-        #SCORE RANGES: 
+    class BigFiveTest:
+        def __init__(self, questions_file):
+            self.questions = self.load_questions(questions_file)
+            self.trait_scores = {
+                "Extraversion": 0,
+                "Agreeableness": 0,
+                "Conscientiousness": 0,
+                "Neuroticism": 0,
+                "Openness": 0
+            }
+
+        def load_questions(self, questions_file):
+            questions = []
+            with open(questions_file, "r") as file:
+                lines = file.readlines()[1:]  # Skip the header row
+                for line in lines:
+                    trait, question = line.strip().split(",", 1)
+                    questions.append((trait, question))
+            return questions
         
         def ask_question(self, question):
             valid_answers = frozenset(["1", "2", "3", "4", "5"])
             while True:
-                answer = input(question + " (1=Disagree strongly, 2=Disagree a little, 3=Neutral, 4=Agree a little, 5=Agree strongly) ")
+                answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
                 if answer in valid_answers:
                     return int(answer)
                 print("Invalid answer. Please enter a number between 1 and 5.")
-                
+
         def take_test(self):
-            """ figuring out a way to calc the scores"""
             for question in self.questions:
-                answer = self.ask_question(question)
-                if question in frozenset([self.questions[0], self.questions[5]]):
-                    self.trait_scores["Extraversion"] += answer
-                elif question in frozenset([self.questions[1], self.questions[9]]):
-                    self.trait_scores["Agreeableness"] += 6 - answer
-                elif question in frozenset([self.questions[2], self.questions[6]]):
-                    self.trait_scores["Conscientiousness"] += 6 - answer
-                elif question in frozenset([self.questions[3], self.questions[7]]):
-                    self.trait_scores["Neuroticism"] += 6 - answer
-                elif question in frozenset([self.questions[4], self.questions[8]]):
-                    self.trait_scores["Openness"] += 6 - answer
+                trait = question[0]
+                question_text = question[1]
+                answer = self.ask_question(question_text)
+                self.trait_scores[trait] += answer
         
 
 def highest_score(dict):
