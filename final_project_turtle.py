@@ -1,3 +1,5 @@
+from argparse import ArgumentParser
+import sys
 """ Song suggestions for a user based on personality """
 
 
@@ -101,3 +103,32 @@ def main(user):
     a=BigFiveTest(user)
     s=Song(a)
     print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
+
+
+def parse_args(arglist):
+    """ Parse command-line arguments.
+    
+    Expect one mandatory arguments:
+        - user: Name of the person taking the test 
+    
+    Args:
+        arglist (list of str): arguments from the command line.
+    
+    Returns:
+        namespace: the parsed arguments, as a namespace.
+    """
+    parser = ArgumentParser()
+    parser.add_argument('user',type=str, help="The name of the User taking the test")
+    return parser.parse_args(arglist)
+
+# Need to figure out which one to use with the parse args
+
+if __name__== "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.user)
+
+
+
+if __name__ == "__main__":
+    user = input('What is your name')
+    main(user)
