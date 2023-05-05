@@ -128,33 +128,66 @@ def highest_score(dict):
 
 class Song():
     def __init__(self, title):
-        """ Initalizes a new instance of Song class 
+        """Initalizes a new instance of Song class 
         
         Args: 
             title (str): title of a song
         """
         self.title = title
+
+    def high_trait_song(self,songdict):
+        ''' should give the User a specific song reccomendation best on highest trait
         
-    def playlist (self,songdict):
+        Args: 
+        songdict (dict): derived from a JSON file that holds 5 dictioanries
+        with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
+        different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka 
+        
+        Returns:
+        Reccomended song to user based on highest trait'''
+        highest = highest_score(self.trait_scores)
+        for key in songdict.keys():
+            if highest == key:
+                self.title = random.choice(songdict[key]['High'])
+
+        return f'A song that best describes you is: {self.title}' 
+    #Line above can be removed---> function can be used in main function
+        
+    def playlist (self,songdict,num_songs=3):
         """Creates a dictionary of different songs
             Args:
-                songdict (dict): derived from JSON file that holds multiple dictionaries 
-                with songs that represent different time periods/genres and are
-                meant to correspond to the traits in BigFiveTest 
-                -- can edit this to fit other persoanlity test if necessary
-                 and I'm still working on the JSON file -> Chiamaka
+                songdict (dict): derived from a JSON file that holds 5 dictioanries
+                with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
+                different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka
             Returns:
-                play (dict): a dictionary of songs with the artist as the key 
-                and the song as the value"""
-        # Will take the max value of the the highest trait and return a dictionary 
-        # (maybe a list?) of songs for the user 
-        self.play = {}
+                play (list): A list of songs with the name and artist in the format ['song' by Artist Name]"""
+        # Will take the max value of the the highest trait and return a list of songs for the user 
+        self.play = []
         User = BigFiveTest()
-        max_score = max(max(User.trait_scores.values()))
-        for track in songdict.keys():
-            for key in User.trait_scores.keys():
-                if max_score == songdict[track]:
-                
+        for trait, score in User.trait_scores.items():
+            if  2  >= score  <= 4:
+                if trait in songdict.keys():
+                    for i in range (num_songs):
+                        self.play.append(random.choice(songdict[trait]['Low']))
+
+            elif  5 >= score  <= 7:
+                if trait in songdict.keys():
+                    for i in range (num_songs):
+                        self.play.append(random.choice(songdict[trait]['Medium']))
+
+            elif  8  >= score  <= 10:
+                if trait in songdict.keys():
+                    for i in range (num_songs):
+                        self.play.append(random.choice(songdict[trait]['High']))
+        return self.play
+        
+    def __repr__(self):
+        """Prints a song recommendation in a readable format
+        
+        Returns:
+            str: A string that contains the recommended song to the user
+        """
+        return f'A song that best describes you is: {self.title}'
 
 def main(user):
     """ Sets up someone to go through the personallity test
