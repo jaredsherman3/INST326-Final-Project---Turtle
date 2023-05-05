@@ -66,60 +66,52 @@ class BigFiveTest:
         plt.show()
         
     def score_analysis(self):
-        """Analyzes the user's trait and scores with explanations"""
+        """Analyzes the user's trait and scores with explanations
+        
+        
+        """
+        with open("score_analysis.json", "r") as f:
+        explinations = json.load(f)
+        results = []
         for trait, score in self.trait_scores.items():
             print(f"Trait: {trait}")
             print(f"Score: {score}")
             if trait == "Extraversion":
                 if score < 4:
-                    print("You are introverted. You may prefer quieter \
-                            settings and need alone time to recharge.")
+                    results.append(explinations[trait]["Low"])
                 elif score >= 4 and score < 7:
-                    print("You are somewhat extraverted. You enjoy \
-                            socializing, but also need some alone time.")
+                    results.append(explinations[trait]["Medium"])
                 else:
-                    print("You enjoy socializing and may feel energized \
-                            by being around others.")
+                    results.append(explinations[trait]["High"])
             elif trait == "Agreeableness":
                 if score < 4:
-                    print("You are not agreeable. You may be competitive \
-                            and even manipulative.")
+                    results.append(explinations[trait]["Low"])
                 elif score >= 4 and score < 7:
-                    print("You are somewhat agreeable. Some of the time \
-                            you are selfless and some selfish.")
+                    results.append(explinations[trait]["Medium"])
                 else:
-                    print("You are agreeable and have a great deal of \
-                            interest in other people.")
+                    results.append(explinations[trait]["High"])
             elif trait == "Conscientiousness":
                 if score < 4:
-                    print("You are not very conscientious. You may \
-                            procrastinate important tasks and be unorganized.")
+                    results.append(explinations[trait]["Low"])
                 elif score >= 4 and score < 7:
-                    print("You are somewhat conscientious. You may be \
-                            organized in some aspects of life and not in others.")
+                    results.append(explinations[trait]["Medium"])
                 else:
-                    print("You are conscientious. You pay attention to detail \
-                            and are very organized with a set schedule.")
+                    results.append(explinations[trait]["High"])
             elif trait == "Neuroticism":
                 if score < 4:
-                    print("You are not very neurotic. You tend to be relaxed \
-                            and deal well with stress.")
+                    results.append(explinations[trait]["Low"])
                 elif score >= 4 and score < 7:
-                    print("You are somewhat neurotic. You can handle your \
-                            emotions well most of the time")
+                    results.append(explinations[trait]["Medium"])
                 else:
-                    print("You are neurotic and tend to worry about many \
-                            things as well as get upset easily.")
+                    results.append(explinations[trait]["High"])
             elif trait == "Openness":
                 if score < 4:
-                    print("You are not very open to experience and tend \
-                            to dislike change or new ideas.")
+                    results.append(explinations[trait]["Low"])
                 elif score >= 4 and score < 7:
-                    print("You are somewhat open to experience. You try \
-                            new things some of the time.")
+                    results.append(explinations[trait]["Medium"])
                 else:
-                    print("You are open to experience. You are very open to \
-                            new things and very adventurous.")
+                    results.append(explinations[trait]["High"])
+        return results
 
 def highest_score(dict):
     '''Returns key with the highest value. 
