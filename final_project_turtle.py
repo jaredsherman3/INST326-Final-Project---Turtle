@@ -68,50 +68,51 @@ class BigFiveTest:
     def score_analysis(self):
         """Analyzes the user's trait and scores with explanations
         
-        
+        Returns:
+            string representing detailed analysis of trait 
         """
         with open("score_analysis.json", "r") as f:
-        explinations = json.load(f)
-        results = []
-        for trait, score in self.trait_scores.items():
-            print(f"Trait: {trait}")
-            print(f"Score: {score}")
-            if trait == "Extraversion":
-                if score < 4:
-                    results.append(explinations[trait]["Low"])
-                elif score >= 4 and score < 7:
-                    results.append(explinations[trait]["Medium"])
-                else:
-                    results.append(explinations[trait]["High"])
-            elif trait == "Agreeableness":
-                if score < 4:
-                    results.append(explinations[trait]["Low"])
-                elif score >= 4 and score < 7:
-                    results.append(explinations[trait]["Medium"])
-                else:
-                    results.append(explinations[trait]["High"])
-            elif trait == "Conscientiousness":
-                if score < 4:
-                    results.append(explinations[trait]["Low"])
-                elif score >= 4 and score < 7:
-                    results.append(explinations[trait]["Medium"])
-                else:
-                    results.append(explinations[trait]["High"])
-            elif trait == "Neuroticism":
-                if score < 4:
-                    results.append(explinations[trait]["Low"])
-                elif score >= 4 and score < 7:
-                    results.append(explinations[trait]["Medium"])
-                else:
-                    results.append(explinations[trait]["High"])
-            elif trait == "Openness":
-                if score < 4:
-                    results.append(explinations[trait]["Low"])
-                elif score >= 4 and score < 7:
-                    results.append(explinations[trait]["Medium"])
-                else:
-                    results.append(explinations[trait]["High"])
-        return results
+            explinations = json.load(f)
+            results = []
+            for trait, score in self.trait_scores.items():
+                print(f"Trait: {trait}")
+                print(f"Score: {score}")
+                if trait == "Extraversion":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Agreeableness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Conscientiousness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Neuroticism":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Openness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+            return results
 
 def highest_score(dict):
     '''Returns key with the highest value. 
