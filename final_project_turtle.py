@@ -1,5 +1,7 @@
 from argparse import ArgumentParser
 import sys
+import matplotlib.pyplot as plt
+import random
 """ Song suggestions for a user based on personality """
 
 
@@ -14,41 +16,109 @@ class BigFiveTest:
         questions (str): questions for the persoanlity test
         trait_scores (int): tracks score for each trait based on response
     """
-    class BigFiveTest:
-        def __init__(self, questions_file):
-            self.questions = self.load_questions(questions_file)
-            self.trait_scores = {
-                "Extraversion": 0,
-                "Agreeableness": 0,
-                "Conscientiousness": 0,
-                "Neuroticism": 0,
-                "Openness": 0
-            }
+    def __init__(self, questions_file):
+        self.questions = self.load_questions(questions_file)
+        self.trait_scores = {
+            "Extraversion": 0,
+            "Agreeableness": 0,
+            "Conscientiousness": 0,
+            "Neuroticism": 0,
+            "Openness": 0
+        }
 
-        def load_questions(self, questions_file):
-            questions = []
-            with open(questions_file, "r") as file:
-                lines = file.readlines()[1:]  # Skip the header row
-                for line in lines:
-                    trait, question = line.strip().split(",", 1)
-                    questions.append((trait, question))
-            return questions
-        
-        def ask_question(self, question):
-            valid_answers = frozenset(["1", "2", "3", "4", "5"])
-            while True:
-                answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
-                if answer in valid_answers:
-                    return int(answer)
-                print("Invalid answer. Please enter a number between 1 and 5.")
+    def load_questions(self, questions_file):
+        questions = []
+        with open(questions_file, "r") as file:
+            lines = file.readlines()[1:]  # Skip the header row
+            for line in lines:
+                trait, question = line.strip().split(",", 1)
+                questions.append((trait, question))
+        return questions
+    
+    def ask_question(self, question):
+        valid_answers = frozenset(["1", "2", "3", "4", "5"])
+        while True:
+            answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
+            if answer in valid_answers:
+                return int(answer)
+            print("Invalid answer. Please enter a number between 1 and 5.")
 
-        def take_test(self):
-            for question in self.questions:
-                trait = question[0]
-                question_text = question[1]
-                answer = self.ask_question(question_text)
-                self.trait_scores[trait] += answer
+    def take_test(self):
+        for question in self.questions:
+            trait = question[0]
+            question_text = question[1]
+            answer = self.ask_question(question_text)
+            self.trait_scores[trait] += answer
+    
+    def visualization(self):
+        """Data visualization method to show a bar chart with the users 
+        trait on the x-axis and the users score on the y-axis"""
+        trait_names = list(self.trait_scores.keys())
+        trait_scores = list(self.trait_scores.values())
+
+        plt.bar(trait_names, trait_scores)
+
+        plt.title('Big Five Personality Traits')
+        plt.xlabel('Traits')
+        plt.ylabel('Scores')
+
+        plt.show()
         
+    def score_analysis(self):
+        """Analyzes the user's trait and scores with explanations"""
+        for trait, score in self.trait_scores.items():
+            print(f"Trait: {trait}")
+            print(f"Score: {score}")
+            if trait == "Extraversion":
+                if score < 4:
+                    print("You are introverted. You may prefer quieter \
+                            settings and need alone time to recharge.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat extraverted. You enjoy \
+                            socializing, but also need some alone time.")
+                else:
+                    print("You enjoy socializing and may feel energized \
+                            by being around others.")
+            elif trait == "Agreeableness":
+                if score < 4:
+                    print("You are not agreeable. You may be competitive \
+                            and even manipulative.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat agreeable. Some of the time \
+                            you are selfless and some selfish.")
+                else:
+                    print("You are agreeable and have a great deal of \
+                            interest in other people.")
+            elif trait == "Conscientiousness":
+                if score < 4:
+                    print("You are not very conscientious. You may \
+                            procrastinate important tasks and be unorganized.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat conscientious. You may be \
+                            organized in some aspects of life and not in others.")
+                else:
+                    print("You are conscientious. You pay attention to detail \
+                            and are very organized with a set schedule.")
+            elif trait == "Neuroticism":
+                if score < 4:
+                    print("You are not very neurotic. You tend to be relaxed \
+                            and deal well with stress.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat neurotic. You can handle your \
+                            emotions well most of the time")
+                else:
+                    print("You are neurotic and tend to worry about many \
+                            things as well as get upset easily.")
+            elif trait == "Openness":
+                if score < 4:
+                    print("You are not very open to experience and tend \
+                            to dislike change or new ideas.")
+                elif score >= 4 and score < 7:
+                    print("You are somewhat open to experience. You try \
+                            new things some of the time.")
+                else:
+                    print("You are open to experience. You are very open to \
+                            new things and very adventurous.")
 
 def highest_score(dict):
     '''Returns key with the highest value. 
@@ -84,9 +154,7 @@ class Song():
         for track in songdict.keys():
             for key in User.trait_scores.keys():
                 if max_score == songdict[track]:
-                   
-                        
-
+                
 
 def main(user):
     """ Sets up someone to go through the personallity test
@@ -97,7 +165,6 @@ def main(user):
     Side Effects:
         Prints the song instance 
         S: an instance of the song class with the song choice based on the user instance
-     
      """ 
    
     a=BigFiveTest(user)
