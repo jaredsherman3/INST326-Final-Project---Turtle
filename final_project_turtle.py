@@ -180,6 +180,8 @@ class Song():
                 if trait in songdict.keys():
                     for i in range (num_songs):
                         self.play.append(random.choice(songdict[trait]['High']))
+                        
+        random.shuffle(self.play)
         return self.play
         
     def __repr__(self):
