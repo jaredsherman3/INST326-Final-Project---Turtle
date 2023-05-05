@@ -69,7 +69,7 @@ class BigFiveTest:
         """Analyzes the user's trait and scores with explanations
         
         Returns:
-            string representing detailed analysis of trait 
+            list with a string representing detailed analysis of trait `
         """
         with open("score_analysis.json", "r") as f:
             explinations = json.load(f)
@@ -196,10 +196,10 @@ def main(user):
         S: an instance of the song class with the song choice based on the user instance
      """ 
    
-    a=BigFiveTest(user)
-    s=Song(a)
+    a = BigFiveTest(user)
+    s = Song(a)
     print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
-
+    a.visualization()
 
 def parse_args(arglist):
     """ Parse command-line arguments.
@@ -222,7 +222,6 @@ def parse_args(arglist):
 if __name__== "__main__":
     args = parse_args(sys.argv[1:])
     main(args.user)
-
 
 
 if __name__ == "__main__":
