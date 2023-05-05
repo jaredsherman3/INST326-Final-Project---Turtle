@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import sys
+import json
 import matplotlib.pyplot as plt
 import random
 """ Song suggestions for a user based on personality """
