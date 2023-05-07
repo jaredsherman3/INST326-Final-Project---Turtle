@@ -176,6 +176,21 @@ class Song():
         highest_score = self.highest_score(self.trait_scores)
         return highest_score
     
+def parse_args(arglist):
+    
+    parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
+
+    parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
+                        help='path to the questions file')
+
+    parser.add_argument('song_file', metavar='SONG_FILE', type=str,
+                        help='path to the song recommendations file')
+
+    parser.add_argument('--num-songs', type=int, default=3,
+                        help='number of songs to include in the playlist (default: 3)')
+
+    return parser.parse_args(arglist)
+    
 
 def main(arglist):
     """ Sets up someone to go through the personallity test
@@ -193,8 +208,7 @@ def main(arglist):
 
     test = BigFiveTest(args.questions_file)
     test.take_test()
-    test.print_results()
-    test.visualization()
+    
 
     song_obj = Song(test.trait_scores, args.song_file)
     playlist = song_obj.song_playlist(test.trait_scores, num_songs=args.num_songs)
@@ -205,25 +219,11 @@ def main(arglist):
 
     highest_trait = song_obj.highest_score(test.trait_scores)
     print(f"-{highest_trait} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-")
-
-    print(song_obj)
+    test.visualization()
+    
 
 if __name__ == '__main__':
     main(sys.argv[1:])
    
     
 
-def parse_args(arglist):
-    
-    parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
-
-    parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
-                        help='path to the questions file')
-
-    parser.add_argument('song_file', metavar='SONG_FILE', type=str,
-                        help='path to the song recommendations file')
-
-    parser.add_argument('--num-songs', type=int, default=3,
-                        help='number of songs to include in the playlist (default: 3)')
-
-    return parser.parse_args(arglist)
