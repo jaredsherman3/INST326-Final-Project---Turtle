@@ -140,36 +140,39 @@ class Song():
         return songs
 
         
-    def playlist (self,songdict,num_songs=3):
-        """Creates a dictionary of different songs
-            Args:
-                songdict (dict): derived from a JSON file that holds 5 dictioanries
-                with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
-                different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka
-            Returns:
-                play (list): A list of songs with the name and artist in the format ['song' by Artist Name]"""
-        # Will take the max value of the the highest trait and return a list of songs for the user 
+    def song_playlist (self,trait_scores, num_songs=5):
+        """Creates a dictionary of different songs - Chiamaka
+
+
+           """
         self.play = []
-        User = BigFiveTest()
-        for trait, score in User.trait_scores.items():
-            if  2  >= score  <= 4:
-                if trait in songdict.keys():
-                    for i in range (num_songs):
-                        self.play.append(random.choice(songdict[trait]['Low']))
+        for trait, score in trait_scores.items():
+            if trait in self.music.keys():
+                if score <= 4:
+                    for i in range(num_songs):
+                        song = random.choice(self.music[trait]['Low'])
+                        while song in self.play:
+                            song = random.choice(self.music[trait]['Low'])
+                        self.play.append(song)
 
-            elif  5 >= score  <= 7:
-                if trait in songdict.keys():
-                    for i in range (num_songs):
-                        self.play.append(random.choice(songdict[trait]['Medium']))
+                elif score >= 4 and score <= 7:
+                    for i in range(num_songs):
+                        song = random.choice(self.music[trait]['Medium'])
+                        while song in self.play:
+                            song = random.choice(self.music[trait]['Medium'])
+                        self.play.append(song)
 
-            elif  8  >= score  <= 10:
-                if trait in songdict.keys():
-                    for i in range (num_songs):
-                        self.play.append(random.choice(songdict[trait]['High']))
-                        
+                else:
+                    for i in range(num_songs):
+                        song = random.choice(self.music[trait]['High'])
+                        while song in self.play:
+                            song = random.choice(self.music[trait]['High'])
+                        self.play.append(song)
+
+        
         random.shuffle(self.play)
         return self.play
-        
+    
     def __repr__(self):
         """Prints a song recommendation in a readable format
         
