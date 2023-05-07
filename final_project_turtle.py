@@ -135,7 +135,7 @@ class Song():
         return songs
 
         
-    def song_playlist (self,trait_scores, num_songs=5):
+    def song_playlist (self,trait_scores, num_songs=3):
         """Creates a dictionary of different songs - Chiamaka
 
 
