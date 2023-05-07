@@ -121,31 +121,24 @@ def highest_score(dict):
 
 
 class Song():
-    def __init__(self, title):
-        """Initalizes a new instance of Song class 
-        
+    def __init__(self, trait_scores, songfile):
+        """Initializes new instances of Song class - Chiamaka
+
         Args: 
-            title (str): title of a song
+            trait_scores(dict): the scores that correspond to the traits in the BigFiveTest
+            songfile(str): the path to the JSON file that holds the song recommendations
         """
-        self.title = title
+        self.trait_scores = trait_scores
+        self.music = self.load_music(songfile)
 
-    def high_trait_song(self,songdict):
-        ''' should give the User a specific song reccomendation best on highest trait
+    def load_music(self, songfile):
+        ''' loads the songs.json file  -Chiamaka
         
-        Args: 
-        songdict (dict): derived from a JSON file that holds 5 dictioanries
-        with three keys 'Low, 'Medium', 'High' and each key has a value that is a list of 
-        different songs.Each dictionarybkey is meant to correspond to the traits in BigFiveTest - Chiamaka 
-        
-        Returns:
-        Reccomended song to user based on highest trait'''
-        highest = highest_score(self.trait_scores)
-        for key in songdict.keys():
-            if highest == key:
-                self.title = random.choice(songdict[key]['High'])
+        ''' 
+        with open(songfile, 'r') as f:
+            songs = json.load(f)
+        return songs
 
-        return f'A song that best describes you is: {self.title}' 
-    #Line above can be removed---> function can be used in main function
         
     def playlist (self,songdict,num_songs=3):
         """Creates a dictionary of different songs
