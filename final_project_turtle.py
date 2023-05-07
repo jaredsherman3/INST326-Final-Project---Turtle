@@ -75,8 +75,6 @@ class BigFiveTest:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
-                print(f"Trait: {trait}")
-                print(f"Score: {score}")
                 if trait == "Extraversion":
                     if score < 4:
                         results.append(explinations[trait]["Low"])
@@ -175,7 +173,7 @@ class Song():
     
     def __str__(self):
         highest_score = self.highest_score(self.trait_scores)
-        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
+        return highest_score
     
 
 def main(user):
