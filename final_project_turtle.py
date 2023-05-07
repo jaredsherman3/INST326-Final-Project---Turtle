@@ -172,11 +172,11 @@ class Song():
         ''' Returns highest trait - Chiamaka'''
         highest_trait = max(trait_scores, key=trait_scores.get)
         return highest_trait
-        
-    def __repr__(self):
-        '''Formal representation of highest trait -Chiamaka'''
+    
+    def __str__(self):
         highest_score = self.highest_score(self.trait_scores)
-        return f"{highest_score} was your highest scored trait. Enjoy a curated playlist made just for you!"
+        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
+    
 
 def main(user):
     """ Sets up someone to go through the personallity test
