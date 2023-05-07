@@ -1,4 +1,4 @@
-from argparse import ArgumentParser
+import argparse 
 import sys
 import json
 import matplotlib.pyplot as plt
@@ -50,6 +50,7 @@ class BigFiveTest:
             question_text = question[1]
             answer = self.ask_question(question_text)
             self.trait_scores[trait] += answer
+        return self.trait_scores
     
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
@@ -75,8 +76,6 @@ class BigFiveTest:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
-                print(f"Trait: {trait}")
-                print(f"Score: {score}")
                 if trait == "Extraversion":
                     if score < 4:
                         results.append(explinations[trait]["Low"])
@@ -175,48 +174,56 @@ class Song():
     
     def __str__(self):
         highest_score = self.highest_score(self.trait_scores)
-        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
+        return highest_score
     
 
-def main(user):
+def main(arglist):
     """ Sets up someone to go through the personallity test
     Args:
-        user: an instance of the BigFive Test Class for a new user
-        
-                        
+        Arglist: A new user going through the test
+                              
     Side Effects:
-        Prints the song instance 
-        S: an instance of the song class with the song choice based on the user instance
+        Prints the songs in a playlist, highest personality trait, and an 
+        instance of the song class  
+        Song: a Song in the recomended playlist 
+        highest_trait: Someones most aligned personality trait 
+        song_obj= an instance of the song class
      """ 
+    args = parse_args(arglist)
+
+    test = BigFiveTest(args.questions_file)
+    test.take_test()
+    test.print_results()
+    test.visualization()
+
+    song_obj = Song(test.trait_scores, args.song_file)
+    playlist = song_obj.song_playlist(test.trait_scores, num_songs=args.num_songs)
+
+    print("Here's your playlist:")
+    for song in playlist:
+        print(song)
+
+    highest_trait = song_obj.highest_score(test.trait_scores)
+    print(f"-{highest_trait} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-")
+
+    print(song_obj)
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
    
-    a = BigFiveTest(user)
-    s = Song(a)
-    print(F"Your persontality trait was {a}, The song we recomend for you is {s}!")
-    a.visualization()
+    
 
 def parse_args(arglist):
-    """ Parse command-line arguments.
     
-    Expect one mandatory arguments:
-        - user: Name of the person taking the test 
-    
-    Args:
-        arglist (list of str): arguments from the command line.
-    
-    Returns:
-        namespace: the parsed arguments, as a namespace.
-    """
-    parser = ArgumentParser()
-    parser.add_argument('user',type=str, help="The name of the User taking the test")
+    parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
+
+    parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
+                        help='path to the questions file')
+
+    parser.add_argument('song_file', metavar='SONG_FILE', type=str,
+                        help='path to the song recommendations file')
+
+    parser.add_argument('--num-songs', type=int, default=3,
+                        help='number of songs to include in the playlist (default: 3)')
+
     return parser.parse_args(arglist)
-
-# Need to figure out which one to use with the parse args
-
-if __name__== "__main__":
-    args = parse_args(sys.argv[1:])
-    main(args.user)
-
-
-if __name__ == "__main__":
-    user = input('What is your name')
-    main(user)
