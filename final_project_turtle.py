@@ -174,7 +174,7 @@ class Song():
     
     def __str__(self):
         highest_score = self.highest_score(self.trait_scores)
-        return highest_score
+        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
     
 def parse_args(arglist):
     
@@ -218,8 +218,8 @@ def main(arglist):
     for song in playlist:
         print(song)
 
-    highest_trait = song_obj.highest_score(test.trait_scores)
-    print(f"-{highest_trait} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-")
+    
+    print(song_obj)
     test.visualization()
     
 
