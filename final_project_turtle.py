@@ -50,6 +50,7 @@ class BigFiveTest:
             question_text = question[1]
             answer = self.ask_question(question_text)
             self.trait_scores[trait] += answer
+        return self.trait_scores
     
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
