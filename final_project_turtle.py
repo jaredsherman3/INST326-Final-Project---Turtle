@@ -199,10 +199,11 @@ def main(arglist):
                               
     Side Effects:
         Prints the songs in a playlist, highest personality trait, and an 
-        instance of the song class  
+        instance of the song class 
+        Creates a new window with a graph displaying users results  
         Song: a Song in the recomended playlist 
         highest_trait: Someones most aligned personality trait 
-        song_obj= an instance of the song class
+        
      """ 
     args = parse_args(arglist)
 
