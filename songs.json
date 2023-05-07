@@ -1,207 +1,236 @@
 {
-"Extraversion":{
-
-"Low": 
-[" 'Human Nature' by Michael Jackson", 
-" 'Stayin Alive' by Bee Gees", 
-" 'Don't' Stop Believin' by Journey",
-" 'Help!' by The Beatles",
-" 'When the party's over' by Billie Eilish",
-" 'Until I Found You' by Stephen Sanchez",
-" 'She Will be Loved' by Maroon 5 ",
-" 'Issues' by Julia Michaels",
-" 'July' by Noah Cyrus",
-" 'Lucky' by Jason Mraz ft. Colbie Cailet"
-],
-
-
-"Medium" :
-[" 'Shape of You' by Ed SHeeran",
-" 'Flowers' by Miley Cyrus",
-" 'Titanium' by David Guetta ft. Sia",
-" 'Wake Me Up' by Avicii",
-" 'Good Time' by One Republic",
-" 'Prisoner' by Miley Cyrus ft. Dua Lipa",
-" 'Thats What I Like' by Bruno Mars",
-" 'Dynamite' by Taio Cruz",
-" 'Glad You Came' by The Wanted"
-],
-
-"High":
-[" 'Yeah!' by Usher", 
-" 'Don't Start Now' by Dua Lipa", 
-" 'Pon de Replay' by Rihanna", 
-" 'I Gotta Feeling' by Black Eyed Peas", 
-" 'Fancy' by Iggy Azalea",
-" 'Sucker' by Jonas Brothers",
-" 'Happy' by Pharrell WIlliams",
-" 'Levitating' by Dua Lipa",
-" 'Say So' by Doja Cat",
-" 'Last Friday Night' by Katy Perry"
-]
-
-
-},
-
-
-"Agreeableness":{
-
-"Low":
-[" 'Jealous' by Nick Jonas",
-" 'We Need A Resolution' by Aaliyah", 
-" 'Problem With You' by Sabrina Claudio",
-" 'Sorry' by Beyonce ",
-" 'Nights Like This' by Kehlani",
-" 'The Boy is Mine' by Brandy & Monica",
-" 'Heartbreaker' by Justin Bieber",
-" 'Rude' by Magic!",
-" 'Bad Blood' by Taylor Swift"
-]
+    "Extraversion":{
     
-   
-,
-
-"Medium": 
-[" 'New Flame' by Chris Brown",
-" 'Ring The Alarm' by Beyonce",
-" 'Beautiful Liar' by Beyonce & Shakira",
-" 'Before He Cheats' by Carrie Underwood",
-" 'You Oughta Know' by Alania Morrisette",
-" 'Leavin' by Jesse McCartney",
-" 'Treat You Better' by Shawn Mendes",
-" 'Four Five Seconds' by Rihanna",
-" 'Girl' by Destiny's Child",
-" 'Mean' by Taylor Swift"
-
-],
-
-"High":
-[" 'You're Still The One' by Shania Twain",
-" 'Toothbrush' by DNCE",
-" 'Thinking Out Loud' by Ed Sheeran",
-" 'My Girl' by Temptations",
-" 'I'll Be There' by Chris Brown",
-" 'Anyone' by Justin Bieber",
-" 'At Last' by Etta James",
-" 'How Deep is Your Love' by Bee Gees", 
-" 'I'm Yours' by Jason Mraz",
-" 'Kiss From a Rose' by Seal"
-]
-
-
-},
-
-"Conscientiousness" : {
-
-"Low":
-[" 'Irresponsible' by Haley Cole",
-" 'Teenage Dream' by Katy Perry",
-" 'Locked Out of Union' by Bruno Mars",
-" 'Starships' by Nicki Minaj",
-" 'Where Have You Been' by Rihanna",
-" 'Payphone' by Maroon 5 "
-
-],
-
-
-"Medium":
-[" 'Africa' by Toto",
-" 'ABC' by Jackson 5",
-" 'Paper Planes' by MIA",
-" 'Blame' by Calvin Harris",
-" 'Team' by Lorde", 
-" 'We Are The Champions' by Queen"
-],
-
-
-"High":
-[" 'Responsibility' by Dolly Parton",
-" 'Man In The Mirror' by Micheal Jackson",
-" 'Umbrella' by Rihanna",
-" 'Hey Brother' by Avicii",
-" 'Back to December' by Taylor Swift",
-" 'Recovery' by Justin Bieber",
-" 'Keep Your Head Up' by Andy Grammar"
-
-]
-
-
-
-},
-
-"Neuroticism": {
-
-"Low":
-[" 'Living Proof' by Camilla Cabello",
-" '10,000 Hours' by Dan & Shay",
-" 'God Must've Spent a Little More Time On You' by N'Sync",
-" 'I Want It That Way' by Backstreet Boys",
-" 'Halo' by Beyonce",
-" 'Someone Like You' by Adele"
-
-],
-
-"Medium": 
-[ " 'ETA' by Justin Bieber",
-" 'Good Days' by SZA",
-" 'Exhale' by Sabrina Carpenter",
-" 'Bad Guy' by Billie Eilish",
-" 'Solitude is Bliss' by Tame Impala"
-],
-
-
-"High": 
-[" 'Flatline' by Justin Bieber",
-" 'Ain't it Fun' by Paramore",
-" 'In My Blood' by Shawn Mendes",
-" 'Easy' by Camila Cabello",
-" 'Brave' by Sara Bareilles",
-" 'Only Love' by Katy Perry",
-" 'Disturbia' by Rihanna",
-" 'Everything I Wanted' by Billie Eilish"
-]
-
-},
-
-"Openness": {
-
-"Low":
-[ " 'Here' by Alessia Cara",
-" 'Not a Bad Thing' by Justin Timberlake",
-" 'Toxic' by Britney Spears",
-" 'Bye Bye Bye' by N'Sync",
-" 'Love Yourself' by Justin Bieber",
-" 'Like Real People Do' by Hozier",
-" 'Creep' By Radiohead"
-],
-
-"Medium": 
-[" 'Strangers' by Jonas Brothers",
-" 'Jackie & Wilson' by Hozier",
-" 'POV' by Ariana Grande",
-" 'Me Myself and I' by Beyonce",
-" 'Alone Together' by Fall Out Boy",
-" 'Say My Name' by Destiny's Child"
-
-],
-
-
-"High": 
-[" 'Bless The Broken Road' by Rascal Flatts'",
-" 'I'll Be' by Edwin Mccain",
-" 'Kissing Strangers' by DNCE",
-" 'New Flame' by Chris Brown",
-" 'I Tried' by Brandy",
-" 'Someone New' by Hozier",
-" 'Galway Girl' by Ed Sheeran", 
-" 'I Don't Wanna Be' by Gavin Degraw",
-" 'The Tide Is High' by Atomic Kitten",
-" 'Rumors' by Sabrina Claudio ft. Zayn"
-]
-
-
-
-}
-
-
-}
+    "Low": 
+    [" 'Human Nature' by Michael Jackson", 
+    " 'Stayin Alive' by Bee Gees", 
+    " 'Don't' Stop Believin' by Journey",
+    " 'Help!' by The Beatles",
+    " 'When the party's over' by Billie Eilish",
+    " 'Until I Found You' by Stephen Sanchez",
+    " 'She Will be Loved' by Maroon 5 ",
+    " 'Issues' by Julia Michaels",
+    " 'July' by Noah Cyrus",
+    " 'Lucky' by Jason Mraz ft. Colbie Cailet",
+    " 'Xanny' by Billie Eilish"
+    ],
+    
+    
+    "Medium" :
+    [" 'Shape of You' by Ed SHeeran",
+    " 'Flowers' by Miley Cyrus",
+    " 'Titanium' by David Guetta ft. Sia",
+    " 'Wake Me Up' by Avicii",
+    " 'Good Time' by One Republic",
+    " 'Prisoner' by Miley Cyrus ft. Dua Lipa",
+    " 'Thats What I Like' by Bruno Mars",
+    " 'Dynamite' by Taio Cruz",
+    " 'Glad You Came' by The Wanted"
+    ],
+    
+    "High":
+    [" 'Yeah!' by Usher", 
+    " 'Don't Start Now' by Dua Lipa", 
+    " 'Pon de Replay' by Rihanna", 
+    " 'I Gotta Feeling' by Black Eyed Peas", 
+    " 'Fancy' by Iggy Azalea",
+    " 'Sucker' by Jonas Brothers",
+    " 'Happy' by Pharrell WIlliams",
+    " 'Levitating' by Dua Lipa",
+    " 'Say So' by Doja Cat",
+    " 'Last Friday Night' by Katy Perry"
+    ]
+    
+    
+    },
+    
+    
+    "Agreeableness":{
+    
+    "Low":
+    [" 'Jealous' by Nick Jonas",
+    " 'We Need A Resolution' by Aaliyah", 
+    " 'Problem With You' by Sabrina Claudio",
+    " 'Sorry' by Beyonce ",
+    " 'Nights Like This' by Kehlani",
+    " 'The Boy is Mine' by Brandy & Monica",
+    " 'Heartbreaker' by Justin Bieber",
+    " 'Rude' by Magic!",
+    " 'Bad Blood' by Taylor Swift"
+    ]
+        
+       
+    ,
+    
+    "Medium": 
+    [" 'New Flame' by Chris Brown",
+    " 'Ring The Alarm' by Beyonce",
+    " 'Beautiful Liar' by Beyonce & Shakira",
+    " 'Before He Cheats' by Carrie Underwood",
+    " 'You Oughta Know' by Alania Morrisette",
+    " 'Leavin' by Jesse McCartney",
+    " 'Treat You Better' by Shawn Mendes",
+    " 'Four Five Seconds' by Rihanna",
+    " 'Girl' by Destiny's Child",
+    " 'Mean' by Taylor Swift"
+    
+    ],
+    
+    "High":
+    [" 'You're Still The One' by Shania Twain",
+    " 'Toothbrush' by DNCE",
+    " 'Thinking Out Loud' by Ed Sheeran",
+    " 'My Girl' by Temptations",
+    " 'I'll Be There' by Chris Brown",
+    " 'Anyone' by Justin Bieber",
+    " 'At Last' by Etta James",
+    " 'How Deep is Your Love' by Bee Gees", 
+    " 'I'm Yours' by Jason Mraz",
+    " 'Kiss From a Rose' by Seal"
+    ]
+    
+    
+    },
+    
+    "Conscientiousness" : {
+    
+    "Low":
+    [" 'Irresponsible' by Haley Cole",
+    " 'Teenage Dream' by Katy Perry",
+    " 'Locked Out of Heaven' by Bruno Mars",
+    " 'Starships' by Nicki Minaj",
+    " 'Where Have You Been' by Rihanna",
+    " 'Payphone' by Maroon 5 ",
+    " 'Suddenly I See' by KT Tunstall",
+    " 'The Climb' by Miley Cyrus",
+    " "
+    
+    ],
+    
+    
+    "Medium":
+    [" 'Africa' by Toto",
+    " 'ABC' by Jackson 5",
+    " 'Paper Planes' by MIA",
+    " 'Blame' by Calvin Harris",
+    " 'Team' by Lorde", 
+    " 'We Are The Champions' by Queen",
+    " 'Love Song' by Sara Bareilles", 
+    " 'Firework' by Katy Perry",
+    " 'Roll With It' by Oasis",
+    " 'Girl on Fire' by Alicia Keys", 
+    " 'What a Wonderful World' by Louis Armstrong"
+    ],
+    
+    
+    "High":
+    [" 'Responsibility' by Dolly Parton",
+    " 'Man In The Mirror' by Micheal Jackson",
+    " 'Umbrella' by Rihanna",
+    " 'Hey Brother' by Avicii",
+    " 'Back to December' by Taylor Swift",
+    " 'Recovery' by Justin Bieber",
+    " 'Keep Your Head Up' by Andy Grammar",
+    " 'A Thousand Miles' by Vanessa Carlton", 
+    " '9 to 5 by Dolly Parton",
+    " 'Fight Song' by Rachel Platten",
+    " 'Who Says' by Selena Gomez and the Scene"
+    ]
+    
+    
+    
+    },
+    
+    "Neuroticism": {
+    
+    "Low":
+    [" 'Living Proof' by Camilla Cabello",
+    " '10,000 Hours' by Dan & Shay",
+    " 'God Must've Spent a Little More Time On You' by N'Sync",
+    " 'I Want It That Way' by Backstreet Boys",
+    " 'Halo' by Beyonce",
+    " 'Someone Like You' by Adele",
+    " 'Skyscraper' by Demi Loavto",
+    " 'Head Above Water' by Avril Lavigne",
+    " 'Everybody Hurts' by REM",
+    " 'Yours' by Conan Gray's",
+    " 'Emotional Stability' by Insomnia"
+    ],
+    
+    "Medium": 
+    [ " 'ETA' by Justin Bieber",
+    " 'Good Days' by SZA",
+    " 'Exhale' by Sabrina Carpenter",
+    " 'Bad Guy' by Billie Eilish",
+    " 'Solitude is Bliss' by Tame Impala", 
+    " 'Save Myself' by Ed Sheeran",
+    " 'breahin' by Ariana Grande",
+    " 'Smile' by Jay-Z", 
+    " 'Boy Next Door' by Richard Marx", 
+    " 'Fake Happy' by Paramore"
+    ],
+    
+    
+    "High": 
+    [" 'Flatline' by Justin Bieber",
+    " 'Ain't it Fun' by Paramore",
+    " 'In My Blood' by Shawn Mendes",
+    " 'Easy' by Camila Cabello",
+    " 'Brave' by Sara Bareilles",
+    " 'Only Love' by Katy Perry",
+    " 'Disturbia' by Rihanna",
+    " 'Everything I Wanted' by Billie Eilish",
+    " 'Good Girls Bad Guys' by Falling in Reverse",
+    " 'King For a Day' by Pierce The Veil", 
+    " 'Disnechanted' by My Chemical Romance"
+    ]
+    
+    },
+    
+    "Openness": {
+    
+    "Low":
+    [ " 'Here' by Alessia Cara",
+    " 'Not a Bad Thing' by Justin Timberlake",
+    " 'Toxic' by Britney Spears",
+    " 'Bye Bye Bye' by N'Sync",
+    " 'Love Yourself' by Justin Bieber",
+    " 'Like Real People Do' by Hozier",
+    " 'Creep' By Radiohead", 
+    " 'Cut You Off' by Selena Gomez",
+    " 'Pretty Hurts' by Beyonce",
+    " 'I Can't Make You Love Me' by Bon Iver"
+    ],
+    
+    "Medium": 
+    [" 'Strangers' by Jonas Brothers",
+    " 'Jackie & Wilson' by Hozier",
+    " 'POV' by Ariana Grande",
+    " 'Me Myself and I' by Beyonce",
+    " 'Alone Together' by Fall Out Boy",
+    " 'Say My Name' by Destiny's Child",
+    " 'Cry Pretty' by Carrie Underwood",
+    " 'Numb' by Linkin Park",
+    " 'Don't Let Me Get Me' by Pink"
+    ],
+    
+    
+    "High": 
+    [" 'Bless The Broken Road' by Rascal Flatts'",
+    " 'I'll Be' by Edwin Mccain",
+    " 'Kissing Strangers' by DNCE",
+    " 'New Flame' by Chris Brown",
+    " 'I Tried' by Brandy",
+    " 'Someone New' by Hozier",
+    " 'Galway Girl' by Ed Sheeran", 
+    " 'I Don't Wanna Be' by Gavin Degraw",
+    " 'The Tide Is High' by Atomic Kitten",
+    " 'Rumors' by Sabrina Claudio ft. Zayn"
+    ]
+    
+    
+    
+    }
+    
+    
+    }

@@ -72,7 +72,7 @@ class BigFiveTest:
         Returns:
             list with a string representing detailed analysis of trait `
         """
-        with open("score_analysis.json", "r") as f:
+        with open(self.score_analysis_file, "r") as f:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
