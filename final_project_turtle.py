@@ -114,11 +114,6 @@ class BigFiveTest:
                         results.append(explinations[trait]["High"])
             return results
 
-def highest_score(dict):
-    '''Returns key with the highest value. 
-    Could be used to find the highest trait score to return suggested songs? -  Chiamaka'''
-    return max(dict, key=dict.get)
-
 
 class Song():
     def __init__(self, trait_scores, songfile):
@@ -173,13 +168,15 @@ class Song():
         random.shuffle(self.play)
         return self.play
     
-    def __repr__(self):
-        """Prints a song recommendation in a readable format
+    def highest_score(self,trait_scores):
+        ''' Returns highest trait - Chiamaka'''
+        highest_trait = max(trait_scores, key=trait_scores.get)
+        return highest_trait
         
-        Returns:
-            str: A string that contains the recommended song to the user
-        """
-        return f'A song that best describes you is: {self.title}'
+    def __repr__(self):
+        '''Formal representation of highest trait -Chiamaka'''
+        highest_score = self.highest_score(self.trait_scores)
+        return f"{highest_score} was your highest scored trait. Enjoy a curated playlist made just for you!"
 
 def main(user):
     """ Sets up someone to go through the personallity test
