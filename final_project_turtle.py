@@ -203,7 +203,7 @@ class Song:
     def __str__(self):
         """Returns a string representing the Song object."""
         highest_score = self.highest_score(self.trait_scores)
-        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
+        return f"{highest_score} is one of your strongest traits!"
     
 def parse_args(arglist):
     """Parse command line arguments.
@@ -246,7 +246,7 @@ def main(arglist):
     playlist = song_obj.song_playlist(test.trait_scores, args.num_songs)
 
     print('\n')
-    print(song_obj)
+    print(f"{song_obj} Enjoy a curated playlist made just for you!")
     print('\n')
 
     print("Here's your playlist:")
