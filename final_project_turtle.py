@@ -70,47 +70,14 @@ class BigFiveTest:
         """Analyzes the user's trait and scores with explanations"""
         with open(score_analysis_file, "r") as f:
             explinations = json.load(f)
-            results = []
-            for trait, score in self.trait_scores.items():
-                if trait == "Extraversion":
-                    if score < 4:
-                        results.append(explinations[trait]["Low"])
-                    elif score >= 4 and score < 7:
-                        results.append(explinations[trait]["Medium"])
-                    else:
-                        results.append(explinations[trait]["High"])
-                elif trait == "Agreeableness":
-                    if score < 4:
-                        results.append(explinations[trait]["Low"])
-                    elif score >= 4 and score < 7:
-                        results.append(explinations[trait]["Medium"])
-                    else:
-                        results.append(explinations[trait]["High"])
-                elif trait == "Conscientiousness":
-                    if score < 4:
-                        results.append(explinations[trait]["Low"])
-                    elif score >= 4 and score < 7:
-                        results.append(explinations[trait]["Medium"])
-                    else:
-                        results.append(explinations[trait]["High"])
-                elif trait == "Neuroticism":
-                    if score < 4:
-                        results.append(explinations[trait]["Low"])
-                    elif score >= 4 and score < 7:
-                        results.append(explinations[trait]["Medium"])
-                    else:
-                        results.append(explinations[trait]["High"])
-                elif trait == "Openness":
-                    if score < 4:
-                        results.append(explinations[trait]["Low"])
-                    elif score >= 4 and score < 7:
-                        results.append(explinations[trait]["Medium"])
-                    else:
-                        results.append(explinations[trait]["High"])
-            for sentence in results: 
-                analyze = sentence
-                print(analyze)
-
+            results = [
+                explinations[trait]["Low"] if score < 4 else
+                explinations[trait]["Medium"] if score >= 4 and score < 7 else
+                explinations[trait]["High"]
+                for trait, score in self.trait_scores.items()
+                ]
+            for sentence in results:
+                print(sentence)
 
 class Song():
     def __init__(self, trait_scores, songfile):
