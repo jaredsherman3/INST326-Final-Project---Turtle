@@ -66,7 +66,7 @@ class BigFiveTest:
 
         plt.show()
         
-    def score_analysis(self):
+    def score_analysis(self, score_analysis_file):
         """Analyzes the user's trait and scores with explanations
         
         Returns:
