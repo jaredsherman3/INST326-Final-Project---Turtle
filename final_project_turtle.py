@@ -103,11 +103,11 @@ class BigFiveTest:
                 explanation for one of the user's traits
         """
         with open(score_analysis_file, "r") as f:
-            explinations = json.load(f)
+            explanations = json.load(f)
             results = [
-                explinations[trait]["Low"] if score < 4 else
-                explinations[trait]["Medium"] if score >= 4 and score < 7 else
-                explinations[trait]["High"]
+                explanations[trait]["Low"] if score < 4 else
+                explanations[trait]["Medium"] if score >= 4 and score < 7 else
+                explanations[trait]["High"]
                 for trait, score in self.trait_scores.items()
                 ]
             return results
@@ -201,9 +201,9 @@ class Song:
         return highest_trait
     
     def __str__(self):
-        """Returns a string representing the Song object."""
+        """Returns an informal string representing the Song object."""
         highest_score = self.highest_score(self.trait_scores)
-        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
+        return f"{highest_score} is one of your strongest traits!"
     
 def parse_args(arglist):
     """Parse command line arguments.
@@ -247,7 +247,7 @@ def main(arglist):
     playlist = song_obj.song_playlist(test.trait_scores, args.num_songs)
 
     print('\n')
-    print(song_obj)
+    print(f"{song_obj} Enjoy a curated playlist made just for you!")
     print('\n')
 
     print("Here's your playlist:")
@@ -255,7 +255,7 @@ def main(arglist):
         print(song)
     
     print('\n')
-    print("Here is a more detialed explination of your five traits:")
+    print("Here is a more detailed explanation of your five traits:")
     result = test.score_analysis(args.score_analysis_file)
     for sentence in result:
         print(sentence)
