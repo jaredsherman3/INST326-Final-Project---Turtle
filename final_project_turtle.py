@@ -180,6 +180,8 @@ def parse_args(arglist):
                         help='path to the questions file')
     parser.add_argument('song_file', metavar='SONG_FILE', type=str,
                         help='path to the song recommendations file')
+    parser.add_argument('score_analysis_file', metavar='ANALYSIS_FILE', type=str,
+                        help='path to the score analysis file')
     parser.add_argument('--num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
     return parser.parse_args(arglist) 
@@ -206,12 +208,14 @@ def main(arglist):
     song_obj = Song(test.trait_scores, args.song_file)
     playlist = song_obj.song_playlist(test.trait_scores, num_songs=args.num_songs)
 
+    print(song_obj)
     print("Here's your playlist:")
     for song in playlist:
         print(song)
-
-    print(song_obj)
-    test.visualization()    
+  
+    print("Here is a more detialed explination of your five traits")
+    print(test.score_analysis(args.score_analysis_file))
+    test.visualization()
 
 if __name__ == '__main__':
     main(sys.argv[1:])
