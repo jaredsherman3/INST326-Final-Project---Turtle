@@ -125,9 +125,9 @@ class Song:
         """Initializes new instances of Song class - Chiamaka
 
         Args: 
-            trait_scores(dict): the scores that correspond to the traits in the 
+            trait_scores (dict): the scores that correspond to the traits in the 
                 BigFiveTest
-            songfile(str): the path to the JSON file that holds the song 
+            songfile (str): the path to the JSON file that holds the song 
                 recommendations
         """
         self.trait_scores = trait_scores
@@ -227,6 +227,7 @@ def parse_args(arglist):
     
 def main(arglist):
     """Sets up someone to go through the personallity test.
+    
     Args:
         arglist: A new user going through the test
                               
