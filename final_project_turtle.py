@@ -67,12 +67,8 @@ class BigFiveTest:
         plt.show()
         
     def score_analysis(self, score_analysis_file):
-        """Analyzes the user's trait and scores with explanations
-        
-        Returns:
-            list with a string representing detailed analysis of trait `
-        """
-        with open(self.score_analysis_file, "r") as f:
+        """Analyzes the user's trait and scores with explanations"""
+        with open(score_analysis_file, "r") as f:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
@@ -111,7 +107,9 @@ class BigFiveTest:
                         results.append(explinations[trait]["Medium"])
                     else:
                         results.append(explinations[trait]["High"])
-            return results
+            for sentence in results: 
+                analyze = sentence
+                print(analyze)
 
 
 class Song():
@@ -126,9 +124,9 @@ class Song():
         self.music = self.load_music(songfile)
 
     def load_music(self, songfile):
-        ''' loads the songs.json file  -Chiamaka
+        """loads the songs.json file  -Chiamaka
         
-        ''' 
+        """
         with open(songfile, 'r') as f:
             songs = json.load(f)
         return songs
@@ -162,7 +160,6 @@ class Song():
                         while song in self.play:
                             song = random.choice(self.music[trait]['High'])
                         self.play.append(song)
-
         
         random.shuffle(self.play)
         return self.play
@@ -207,19 +204,21 @@ def main(arglist):
     test = BigFiveTest(args.questions_file)
     test.take_test()
     
-
     song_obj = Song(test.trait_scores, args.song_file)
     playlist = song_obj.song_playlist(test.trait_scores, args.num_songs)
 
+    print('\n')
     print(song_obj)
+    print('\n')
+
     print("Here's your playlist:")
     for song in playlist:
         print(song)
-  
-    print("Here is a more detialed explination of your five traits")
+    
+    print('\n')
+    print("Here is a more detialed explination of your five traits:")
     print(test.score_analysis(args.score_analysis_file))
 
-    print(song_obj)
     test.visualization()
 
 if __name__ == '__main__':
