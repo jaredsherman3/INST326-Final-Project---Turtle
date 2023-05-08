@@ -2,10 +2,10 @@
     "Extraversion":{
     
     "Low": 
-    "You are introverted. You may prefer quieter settings and need alone time to recharge."
+    "You are introverted and may prefer quieter settings and need alone time to recharge."
     ,
     "Medium" :
-    "You are somewhat extraverted. You enjoy socializing, but also need some alone time."
+    "You are somewhat extraverted and enjoy socializing, but also need some alone time."
     ,
     "High":
     "You enjoy socializing and may feel energizedby being around others."
@@ -14,10 +14,10 @@
     "Agreeableness":{
     
     "Low":
-    "You are not agreeable. You may be competitive and even manipulative."
+    "You are not agreeable and may be competitive and even manipulative."
     ,
     "Medium": 
-    "You are somewhat agreeable. Some of the time you are selfless and some selfish."
+    "You are somewhat agreeable, but some of the time you are selfless and some selfish."
     ,
     "High":
     "You are agreeable and have a great deal of interest in other people."
@@ -26,22 +26,22 @@
     "Conscientiousness" : {
     
     "Low":
-    "You are not very conscientious. You may procrastinate important tasks and be unorganized."
+    "You are not very conscientious and may procrastinate important tasks and be unorganized."
     ,
     "Medium":
-    "You are somewhat conscientious. You may be organized in some aspects of life and not in others."
+    "You are somewhat conscientious and may be organized in some aspects of life but not in others."
     ,
     "High":
-    "You are conscientious. You pay attention to detail and are very organized with a set schedule."
+    "You are conscientious - you pay attention to detail and are very organized with a set schedule."
     },
     
     "Neuroticism": {
     
     "Low":
-    "You are not very neurotic. You tend to be relaxed and deal well with stress."
+    "You are not very neurotic and tend to be relaxed and deal well with stress."
     ,
     "Medium": 
-    "You are somewhat neurotic. You can handle your emotions well most of the time"
+    "You are somewhat neurotica and can handle your emotions well most of the time"
     ,
     "High": 
     "You are neurotic and tend to worry about many things as well as get upset easily."
@@ -53,10 +53,10 @@
     "You are not very open to experience and tend to dislike change or new ideas."
     ,
     "Medium": 
-    "You are somewhat open to experience. You try new things some of the time."
+    "You are somewhat open to experience and like to try new things some of the time."
     ,
     "High": 
-    "You are open to experience. You are very open to new things and very adventurous."
+    "You are open to experience - always trying new things and very adventurous."
     }
     
     }
