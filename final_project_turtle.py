@@ -39,7 +39,8 @@ class BigFiveTest:
     def ask_question(self, question):
         valid_answers = frozenset(["1", "2", "3", "4", "5"])
         while True:
-            answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
+            answer = input(question + " (1=Strongly Disagree, 2=Disagree, \
+                                        3=Neutral, 4=Agree, 5=Strongly Agree) ")
             if answer in valid_answers:
                 return int(answer)
             print("Invalid answer. Please enter a number between 1 and 5.")
@@ -66,13 +67,13 @@ class BigFiveTest:
 
         plt.show()
         
-    def score_analysis(self):
+    def score_analysis(self, score_analysis_file):
         """Analyzes the user's trait and scores with explanations
         
         Returns:
-            list with a string representing detailed analysis of trait `
+            list with a string representing a detailed analysis of trait 
         """
-        with open(self.score_analysis_file, "r") as f:
+        with open(score_analysis_file, "r") as f:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
@@ -112,7 +113,6 @@ class BigFiveTest:
                     else:
                         results.append(explinations[trait]["High"])
             return results
-
 
 class Song():
     def __init__(self, trait_scores, songfile):
