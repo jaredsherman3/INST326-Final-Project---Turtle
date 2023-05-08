@@ -66,13 +66,13 @@ class BigFiveTest:
 
         plt.show()
         
-    def score_analysis(self, score_analysis_file):
+    def score_analysis(self):
         """Analyzes the user's trait and scores with explanations
         
         Returns:
-            list with a string representing a detailed analysis of trait 
+            list with a string representing detailed analysis of trait `
         """
-        with open(score_analysis_file, "r") as f:
+        with open(self.score_analysis_file, "r") as f:
             explinations = json.load(f)
             results = []
             for trait, score in self.trait_scores.items():
@@ -113,6 +113,7 @@ class BigFiveTest:
                         results.append(explinations[trait]["High"])
             return results
 
+
 class Song():
     def __init__(self, trait_scores, songfile):
         """Initializes new instances of Song class - Chiamaka
@@ -131,6 +132,7 @@ class Song():
         with open(songfile, 'r') as f:
             songs = json.load(f)
         return songs
+
         
     def song_playlist (self,trait_scores, num_songs=3):
         """Creates a dictionary of different songs - Chiamaka
@@ -160,7 +162,8 @@ class Song():
                         while song in self.play:
                             song = random.choice(self.music[trait]['High'])
                         self.play.append(song)
-                        
+
+        
         random.shuffle(self.play)
         return self.play
     
@@ -184,8 +187,8 @@ def parse_args(arglist):
                         help='path to the score analysis file')
     parser.add_argument('--num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
-    return parser.parse_args(arglist) 
-
+    return parser.parse_args(arglist)
+    
 def main(arglist):
     """ Sets up someone to go through the personallity test
     Args:
@@ -206,7 +209,7 @@ def main(arglist):
     
 
     song_obj = Song(test.trait_scores, args.song_file)
-    playlist = song_obj.song_playlist(test.trait_scores, num_songs=args.num_songs)
+    playlist = song_obj.song_playlist(test.trait_scores, args.num_songs)
 
     print(song_obj)
     print("Here's your playlist:")
@@ -215,6 +218,8 @@ def main(arglist):
   
     print("Here is a more detialed explination of your five traits")
     print(test.score_analysis(args.score_analysis_file))
+
+    print(song_obj)
     test.visualization()
 
 if __name__ == '__main__':
