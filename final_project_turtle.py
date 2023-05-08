@@ -131,7 +131,6 @@ class Song():
         with open(songfile, 'r') as f:
             songs = json.load(f)
         return songs
-
         
     def song_playlist (self,trait_scores, num_songs=3):
         """Creates a dictionary of different songs - Chiamaka
@@ -161,8 +160,7 @@ class Song():
                         while song in self.play:
                             song = random.choice(self.music[trait]['High'])
                         self.play.append(song)
-
-        
+                        
         random.shuffle(self.play)
         return self.play
     
@@ -178,18 +176,13 @@ class Song():
 def parse_args(arglist):
     
     parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
-
     parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
                         help='path to the questions file')
-
     parser.add_argument('song_file', metavar='SONG_FILE', type=str,
                         help='path to the song recommendations file')
-
     parser.add_argument('--num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
-
-    return parser.parse_args(arglist)
-    
+    return parser.parse_args(arglist) 
 
 def main(arglist):
     """ Sets up someone to go through the personallity test
@@ -217,11 +210,8 @@ def main(arglist):
     for song in playlist:
         print(song)
 
-    
     print(song_obj)
-    test.visualization()
-    test.score_analysis()
-    
+    test.visualization()    
 
 if __name__ == '__main__':
     main(sys.argv[1:])
