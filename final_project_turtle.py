@@ -221,7 +221,7 @@ def parse_args(arglist):
                         help='path to the song recommendations file')
     parser.add_argument('score_analysis_file', metavar='ANALYSIS_FILE', type=str,
                         help='path to the score analysis file')
-    parser.add_argument('--num_songs', type=int, default=3,
+    parser.add_argument('num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
     return parser.parse_args(arglist)
     
