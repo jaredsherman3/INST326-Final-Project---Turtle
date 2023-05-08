@@ -3,8 +3,7 @@ import sys
 import json
 import matplotlib.pyplot as plt
 import random
-""" Song suggestions for a user based on personality """
-
+"""Song suggestions for a user based on personality"""
 
 class BigFiveTest:
     """A class representing a personality test based on the Big Five personality 
@@ -92,7 +91,7 @@ class BigFiveTest:
         plt.show()
         
     def score_analysis(self, score_analysis_file):
-        """Analyzes the user's trait and scores with explanations
+        """Analyzes the user's trait and scores with explanations.
         
         Args:
             score_analysis_file (str): path to the JSON file containing the 
@@ -122,7 +121,7 @@ class Song:
         songfile (str): path to the JSON file containing the song recommendations
     """
     def __init__(self, trait_scores, songfile):
-        """Initializes new instances of Song class - Chiamaka
+        """Initializes new instances of Song class.
 
         Args: 
             trait_scores (dict): the scores that correspond to the traits in the 
@@ -221,7 +220,7 @@ def parse_args(arglist):
                         help='path to the song recommendations file')
     parser.add_argument('score_analysis_file', metavar='ANALYSIS_FILE', type=str,
                         help='path to the score analysis file')
-    parser.add_argument('num_songs', type=int, default=3,
+    parser.add_argument('--num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
     return parser.parse_args(arglist)
     
@@ -264,6 +263,3 @@ def main(arglist):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-   
-    
-
