@@ -39,8 +39,7 @@ class BigFiveTest:
     def ask_question(self, question):
         valid_answers = frozenset(["1", "2", "3", "4", "5"])
         while True:
-            answer = input(question + " (1=Strongly Disagree, 2=Disagree, \
-                                        3=Neutral, 4=Agree, 5=Strongly Agree) ")
+            answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
             if answer in valid_answers:
                 return int(answer)
             print("Invalid answer. Please enter a number between 1 and 5.")
@@ -221,6 +220,7 @@ def main(arglist):
     
     print(song_obj)
     test.visualization()
+    test.score_analysis()
     
 
 if __name__ == '__main__':
