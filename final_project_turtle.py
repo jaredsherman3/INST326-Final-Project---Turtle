@@ -76,8 +76,7 @@ class BigFiveTest:
                 explinations[trait]["High"]
                 for trait, score in self.trait_scores.items()
                 ]
-            for sentence in results:
-                print(sentence)
+            return results
 
 class Song():
     def __init__(self, trait_scores, songfile):
@@ -184,7 +183,9 @@ def main(arglist):
     
     print('\n')
     print("Here is a more detialed explination of your five traits:")
-    print(test.score_analysis(args.score_analysis_file))
+    result = test.score_analysis(args.score_analysis_file)
+    for sentence in result:
+        print(sentence)
 
     test.visualization()
 
