@@ -15,7 +15,7 @@ class BigFiveTest:
     """
     def __init__(self, questions_file):
         """Initializes instance of the BigFiveTest class.
-
+            Primary Author: Jessica Doan
         Args:
             questions_file (str): path to the CSV file containing the test questions
         """
@@ -30,9 +30,13 @@ class BigFiveTest:
 
     def load_questions(self, questions_file):
         """Loads the questions from a CSV file and returns them as a list of tuples.
-
+            Primary Author: Jessica Doan
+            Technique: with statement
         Args:
             questions_file (str): path to the CSV file containing the test questions
+        
+        Side effects:
+            Modifies questions attribute
 
         Returns:
             questions (list): a list of tuples, where each tuple contains a 
@@ -48,6 +52,8 @@ class BigFiveTest:
     
     def ask_question(self, question):
         """Asks the user a question and returns their answer as an integer.
+            Primary Author: Jessica Doan
+            Technique: Frozenset
 
         Args:
             question (str): the question to ask the user
@@ -65,6 +71,10 @@ class BigFiveTest:
     def take_test(self):
         """Asks the user all the questions in the test and returns their trait 
             scores.
+            Primary Author: Jessica Doan
+            
+        Side effects: 
+            Modifies trait_scores attribute
 
         Returns:
             trait_scores (dict): a dictionary mapping trait names to scores 
@@ -78,7 +88,10 @@ class BigFiveTest:
     
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
-        trait on the x-axis and the users score on the y-axis"""
+        trait on the x-axis and the users score on the y-axis
+        Primary Author: Jared Sherman
+        Technique: Visualizing data with pyplot
+        """
         trait_names = list(self.trait_scores.keys())
         trait_scores = list(self.trait_scores.values())
 
@@ -92,6 +105,8 @@ class BigFiveTest:
         
     def score_analysis(self, score_analysis_file):
         """Analyzes the user's trait and scores with explanations.
+            Primary Author: Jared Sherman
+            Technique: List comprehension
         
         Args:
             score_analysis_file (str): path to the JSON file containing the 
@@ -122,6 +137,7 @@ class Song:
     """
     def __init__(self, trait_scores, songfile):
         """Initializes new instances of Song class.
+            Primary author: Chiamaka Ebulu
 
         Args: 
             trait_scores (dict): the scores that correspond to the traits in the 
@@ -134,6 +150,8 @@ class Song:
 
     def load_music(self, songfile):
         """Loads the song recommendations from a JSON file.
+            Primary Author: Chiamaka Ebulu
+            Technique: use of json.load
 
         Args:
             songfile (str): path to the JSON file containing the song recommendations
@@ -149,6 +167,8 @@ class Song:
         
     def song_playlist (self,trait_scores, num_songs=3):
         """Creates a playlist of songs based on the user's personality traits.
+            Primary author: Chiamaka Ebulu
+            Technique: Optional Parameter
 
         Args:
             trait_scores (dict): the user's trait scores, as a dictionary mapping 
@@ -188,6 +208,8 @@ class Song:
     
     def highest_score(self,trait_scores):
         """Returns the name of the trait with the highest score.
+            Primary Author: Chiamaka Ebulu
+            Technique: Key function
 
         Args:
             trait_scores (dict): the user's trait scores, as a dictionary 
@@ -200,12 +222,17 @@ class Song:
         return highest_trait
     
     def __str__(self):
-        """Returns an informal string representing the Song object."""
+        """Returns an informal string representing the Song object.
+            Primary Author: Graham Albers
+            Technique: magic method asides from __init__
+        """
         highest_score = self.highest_score(self.trait_scores)
         return f"{highest_score} is one of your strongest traits!"
     
 def parse_args(arglist):
     """Parse command line arguments.
+        Primary author: Graham Albers
+        Teechnique: ArgumentParser Class
     
     Args:
         arglist (list): A list of command line arguments
@@ -226,6 +253,7 @@ def parse_args(arglist):
     
 def main(arglist):
     """Sets up someone to go through the personallity test.
+        Primary author: Graham Albers
     
     Args:
         arglist: A new user going through the test
