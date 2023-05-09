@@ -3,7 +3,6 @@ import sys
 import json
 import matplotlib.pyplot as plt
 import random
-"""Song suggestions for a user based on personality"""
 
 class BigFiveTest:
     """ 
@@ -23,6 +22,16 @@ class BigFiveTest:
         }
 
     def load_questions(self, questions_file):
+        """ Loads a set of personality test questions from a csv file
+
+            Args: 
+                questions_file (str): Path to csv file containing questions
+            Side effects: 
+                Modifies questions attribute
+            Returns:
+                list: A list of tuples. Each tuple has a questions and
+                its associated trait
+        """
         questions = []
         with open(questions_file, "r") as file:
             lines = file.readlines()[1:]  # Skip the header row
@@ -32,14 +41,33 @@ class BigFiveTest:
         return questions
     
     def ask_question(self, question):
+        """ Asks user a question and validates their answer
+        
+            Args:
+                question (str): question for user
+                
+            Returns:
+                int: User's answer on scale of 1-5
+        """
         valid_answers = frozenset(["1", "2", "3", "4", "5"])
         while True:
-            answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
+            answer = input(
+                question + "(1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree)"
+                )
             if answer in valid_answers:
                 return int(answer)
             print("Invalid answer. Please enter a number between 1 and 5.")
 
     def take_test(self):
+        """ Conducts the exam by iterating through set of questions
+            and records user's answers.
+            
+            Side effects: 
+                modifies trait_scores
+            
+            Returns:
+                dict: A dictionary of user's scores on each of the traits
+        """
         for question in self.questions:
             trait = question[0]
             question_text = question[1]
