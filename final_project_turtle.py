@@ -88,9 +88,9 @@ class BigFiveTest:
     
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
-        trait on the x-axis and the users score on the y-axis
-        Primary Author: Jared Sherman
-        Technique: Visualizing data with pyplot
+            trait on the x-axis and the users score on the y-axis
+            Primary Author: Jared Sherman
+            Technique: Visualizing data with pyplot
         """
         trait_names = list(self.trait_scores.keys())
         trait_scores = list(self.trait_scores.values())
