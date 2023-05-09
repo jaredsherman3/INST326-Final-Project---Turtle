@@ -7,6 +7,7 @@ import random
 class BigFiveTest:
     """ 
     CLass representing a personality test
+    
     Attributes:
         questions (str): questions for the persoanlity test
         trait_scores (int): tracks score for each trait based on response
@@ -23,6 +24,8 @@ class BigFiveTest:
 
     def load_questions(self, questions_file):
         """ Loads a set of personality test questions from a csv file
+            Primary Author: Jessica Doan
+            Technique: with statement
 
             Args: 
                 questions_file (str): Path to csv file containing questions
@@ -42,6 +45,8 @@ class BigFiveTest:
     
     def ask_question(self, question):
         """ Asks user a question and validates their answer
+            Primary Author: Jessica Doan
+            Technique: Frozenset
         
             Args:
                 question (str): question for user
@@ -61,6 +66,7 @@ class BigFiveTest:
     def take_test(self):
         """ Conducts the exam by iterating through set of questions
             and records user's answers.
+            Primary Author: Jessica Doan
             
             Side effects: 
                 modifies trait_scores
@@ -77,7 +83,11 @@ class BigFiveTest:
     
     def visualization(self):
         """Data visualization method to show a bar chart with the users 
-        trait on the x-axis and the users score on the y-axis"""
+        trait on the x-axis and the users score on the y-axis
+        
+        Primary Author: Jared Sherman
+        Technique: Visualizing Data with Pyplot
+        """
         trait_names = list(self.trait_scores.keys())
         trait_scores = list(self.trait_scores.values())
 
@@ -91,6 +101,8 @@ class BigFiveTest:
         
     def score_analysis(self):
         """Analyzes the user's trait and scores with explanations
+            Primary Author: Jared Sherman
+            Technique: List comprehension
         
         Returns:
             list with a string representing detailed analysis of trait `
@@ -139,7 +151,8 @@ class BigFiveTest:
 
 class Song():
     def __init__(self, trait_scores, songfile):
-        """Initializes new instances of Song class - Chiamaka
+        """Initializes new instances of Song class
+            Primary Author: Chiamaka Ebulu
 
         Args: 
             trait_scores(dict): the scores that correspond to the traits in the BigFiveTest
@@ -149,7 +162,9 @@ class Song():
         self.music = self.load_music(songfile)
 
     def load_music(self, songfile):
-        ''' loads the songs.json file  -Chiamaka
+        ''' loads the songs.json files
+            Primary Author: Chiamaka Ebulu
+            Technique: json.load
         
         ''' 
         with open(songfile, 'r') as f:
@@ -158,7 +173,9 @@ class Song():
 
         
     def song_playlist (self,trait_scores, num_songs=3):
-        """Creates a dictionary of different songs - Chiamaka
+        """Creates a dictionary of different songs
+            Primary Author: Chiamaka Ebulu
+            Technique: Optional Parameter
 
 
            """
@@ -191,15 +208,27 @@ class Song():
         return self.play
     
     def highest_score(self,trait_scores):
-        ''' Returns highest trait - Chiamaka'''
+        ''' Returns highest trait
+            Primary Author: Chiamaka Ebulu
+            Technique: Key function
+            
+            '''
         highest_trait = max(trait_scores, key=trait_scores.get)
         return highest_trait
     
     def __str__(self):
+        """
+            Primary author: Graham Albers
+            Technique: Magic method other than __init__
+        """
         highest_score = self.highest_score(self.trait_scores)
         return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
     
 def parse_args(arglist):
+    """
+        Primary author: Graham Albers
+        Technique: Magic ArgumentParser Class
+    """
     
     parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
     parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
@@ -212,6 +241,8 @@ def parse_args(arglist):
     
 def main(arglist):
     """ Sets up someone to go through the personallity test
+        Primary author: Graham Albers
+        Technique: f-strings containing expressions
     Args:
         Arglist: A new user going through the test
                               
