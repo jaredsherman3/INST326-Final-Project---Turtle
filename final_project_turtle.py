@@ -6,19 +6,13 @@ import random
 """Song suggestions for a user based on personality"""
 
 class BigFiveTest:
-    """A class representing a personality test based on the Big Five personality 
-        traits.
-    
+    """ 
+    CLass representing a personality test
     Attributes:
         questions (str): questions for the persoanlity test
         trait_scores (int): tracks score for each trait based on response
     """
     def __init__(self, questions_file):
-        """Initializes instance of the BigFiveTest class.
-
-        Args:
-            questions_file (str): path to the CSV file containing the test questions
-        """
         self.questions = self.load_questions(questions_file)
         self.trait_scores = {
             "Extraversion": 0,
@@ -29,15 +23,6 @@ class BigFiveTest:
         }
 
     def load_questions(self, questions_file):
-        """Loads the questions from a CSV file and returns them as a list of tuples.
-
-        Args:
-            questions_file (str): path to the CSV file containing the test questions
-
-        Returns:
-            questions (list): a list of tuples, where each tuple contains a 
-                trait and a question string
-        """
         questions = []
         with open(questions_file, "r") as file:
             lines = file.readlines()[1:]  # Skip the header row
@@ -47,14 +32,6 @@ class BigFiveTest:
         return questions
     
     def ask_question(self, question):
-        """Asks the user a question and returns their answer as an integer.
-
-        Args:
-            question (str): the question to ask the user
-
-        Returns:
-            answer (int): the user's answer, as an integer between 1 and 5
-        """
         valid_answers = frozenset(["1", "2", "3", "4", "5"])
         while True:
             answer = input(question + " (1=Strongly Disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly Agree) ")
@@ -63,12 +40,6 @@ class BigFiveTest:
             print("Invalid answer. Please enter a number between 1 and 5.")
 
     def take_test(self):
-        """Asks the user all the questions in the test and returns their trait 
-            scores.
-
-        Returns:
-            trait_scores (dict): a dictionary mapping trait names to scores 
-        """
         for question in self.questions:
             trait = question[0]
             question_text = question[1]
@@ -90,75 +61,79 @@ class BigFiveTest:
 
         plt.show()
         
-    def score_analysis(self, score_analysis_file):
-        """Analyzes the user's trait and scores with explanations.
+    def score_analysis(self):
+        """Analyzes the user's trait and scores with explanations
         
-        Args:
-            score_analysis_file (str): path to the JSON file containing the 
-                trait explanations
-
         Returns:
-            results (list): a list of strings, where each string is an 
-                explanation for one of the user's traits
+            list with a string representing detailed analysis of trait `
         """
-        with open(score_analysis_file, "r") as f:
-            explanations = json.load(f)
-            results = [
-                explanations[trait]["Low"] if score < 4 else
-                explanations[trait]["Medium"] if score >= 4 and score < 7 else
-                explanations[trait]["High"]
-                for trait, score in self.trait_scores.items()
-                ]
+        with open(self.score_analysis_file, "r") as f:
+            explinations = json.load(f)
+            results = []
+            for trait, score in self.trait_scores.items():
+                if trait == "Extraversion":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Agreeableness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Conscientiousness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Neuroticism":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
+                elif trait == "Openness":
+                    if score < 4:
+                        results.append(explinations[trait]["Low"])
+                    elif score >= 4 and score < 7:
+                        results.append(explinations[trait]["Medium"])
+                    else:
+                        results.append(explinations[trait]["High"])
             return results
 
-class Song:
-    """A class representing a song recommendation system based on the user's 
-        personality traits.
 
-    Attributes:
-        trait_scores (dict): the user's trait scores, as a dictionary mapping 
-            trait names to scores
-        songfile (str): path to the JSON file containing the song recommendations
-    """
+class Song():
     def __init__(self, trait_scores, songfile):
-        """Initializes new instances of Song class.
+        """Initializes new instances of Song class - Chiamaka
 
         Args: 
-            trait_scores (dict): the scores that correspond to the traits in the 
-                BigFiveTest
-            songfile (str): the path to the JSON file that holds the song 
-                recommendations
+            trait_scores(dict): the scores that correspond to the traits in the BigFiveTest
+            songfile(str): the path to the JSON file that holds the song recommendations
         """
         self.trait_scores = trait_scores
         self.music = self.load_music(songfile)
 
     def load_music(self, songfile):
-        """Loads the song recommendations from a JSON file.
-
-        Args:
-            songfile (str): path to the JSON file containing the song recommendations
-
-        Returns:
-            songs (dict): a dictionary mapping trait names to lists of r
-                ecommended songs
-        """
+        ''' loads the songs.json file  -Chiamaka
+        
+        ''' 
         with open(songfile, 'r') as f:
             songs = json.load(f)
         return songs
 
         
     def song_playlist (self,trait_scores, num_songs=3):
-        """Creates a playlist of songs based on the user's personality traits.
+        """Creates a dictionary of different songs - Chiamaka
 
-        Args:
-            trait_scores (dict): the user's trait scores, as a dictionary mapping 
-                trait names to scores
-            num_songs (int): the number of songs to include in the playlist for 
-                each trait (default is 3)
 
-        Returns:
-            play (list): a list of recommended songs
-        """
+           """
         self.play = []
         for trait, score in trait_scores.items():
             if trait in self.music.keys():
@@ -182,53 +157,35 @@ class Song:
                         while song in self.play:
                             song = random.choice(self.music[trait]['High'])
                         self.play.append(song)
+
         
         random.shuffle(self.play)
         return self.play
     
     def highest_score(self,trait_scores):
-        """Returns the name of the trait with the highest score.
-
-        Args:
-            trait_scores (dict): the user's trait scores, as a dictionary 
-                mapping trait names to scores
-
-        Returns:
-            highest_trait (str): the name of the trait with the highest score
-        """
+        ''' Returns highest trait - Chiamaka'''
         highest_trait = max(trait_scores, key=trait_scores.get)
         return highest_trait
     
     def __str__(self):
-        """Returns an informal string representing the Song object."""
         highest_score = self.highest_score(self.trait_scores)
-        return f"{highest_score} is one of your strongest traits!"
+        return f"-{highest_score} seems to be one of your strongest traits! Enjoy a curated playlist made just for you!-"
     
 def parse_args(arglist):
-    """Parse command line arguments.
     
-    Args:
-        arglist (list): A list of command line arguments
-        
-    Returns:
-        namespace: the parsed arguments, as a namespace.
-    """
     parser = argparse.ArgumentParser(description='Big Five Test and Song Recommendation')
     parser.add_argument('questions_file', metavar='QUESTIONS_FILE', type=str,
                         help='path to the questions file')
     parser.add_argument('song_file', metavar='SONG_FILE', type=str,
                         help='path to the song recommendations file')
-    parser.add_argument('score_analysis_file', metavar='ANALYSIS_FILE', type=str,
-                        help='path to the score analysis file')
     parser.add_argument('--num_songs', type=int, default=3,
                         help='number of songs to include in the playlist (default: 3)')
     return parser.parse_args(arglist)
     
 def main(arglist):
-    """Sets up someone to go through the personallity test.
-    
+    """ Sets up someone to go through the personallity test
     Args:
-        arglist: A new user going through the test
+        Arglist: A new user going through the test
                               
     Side Effects:
         Prints the songs in a playlist, highest personality trait, and an 
@@ -236,30 +193,26 @@ def main(arglist):
         Creates a new window with a graph displaying users results  
         Song: a Song in the recomended playlist 
         highest_trait: Someones most aligned personality trait 
+        
      """ 
     args = parse_args(arglist)
 
     test = BigFiveTest(args.questions_file)
     test.take_test()
     
+
     song_obj = Song(test.trait_scores, args.song_file)
     playlist = song_obj.song_playlist(test.trait_scores, args.num_songs)
-
-    print('\n')
-    print(f"{song_obj} Enjoy a curated playlist made just for you!")
-    print('\n')
 
     print("Here's your playlist:")
     for song in playlist:
         print(song)
-    
-    print('\n')
-    print("Here is a more detailed explanation of your five traits:")
-    result = test.score_analysis(args.score_analysis_file)
-    for sentence in result:
-        print(sentence)
 
+    print(song_obj)
     test.visualization()
 
 if __name__ == '__main__':
     main(sys.argv[1:])
+   
+    
+
