@@ -72,6 +72,7 @@ class BigFiveTest:
         """Asks the user all the questions in the test and returns their trait 
             scores.
             Primary Author: Jessica Doan
+            Technique: Comprehension
             
         Side effects: 
             Modifies trait_scores attribute
@@ -79,11 +80,10 @@ class BigFiveTest:
         Returns:
             trait_scores (dict): a dictionary mapping trait names to scores 
         """
-        for question in self.questions:
-            trait = question[0]
-            question_text = question[1]
-            answer = self.ask_question(question_text)
-            self.trait_scores[trait] += answer
+        self.trait_scores = {
+            trait: sum(self.ask_question(q[1]) for q in self.questions if q[0] == trait)
+            for trait in self.trait_scores
+        }
         return self.trait_scores
     
     def visualization(self):
@@ -106,7 +106,7 @@ class BigFiveTest:
     def score_analysis(self, score_analysis_file):
         """Analyzes the user's trait and scores with explanations.
             Primary Author: Jared Sherman
-            Technique: List comprehension
+            Technique: Sequence Unpacking
         
         Args:
             score_analysis_file (str): path to the JSON file containing the 
